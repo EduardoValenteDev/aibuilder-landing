@@ -71,15 +71,15 @@
     </style>
     <style id="aibuilder-custom">
       /* FASE 1: Ticker infinito */
-      .animate-ticker {
+      .aib-ticker {
         animation: ticker 35s linear infinite;
         will-change: transform;
       }
-      .animate-ticker:hover {
+      .aib-ticker:hover {
         animation-play-state: paused;
       }
       @media (prefers-reduced-motion: reduce) {
-        .animate-ticker {
+        .aib-ticker {
           animation: none !important;
         }
       }
@@ -217,7 +217,7 @@
         aria-relevant="additions text"
         aria-atomic="false"
       ></section>
-      <main class="min-h-screen bg-background text-foreground pb-20 md:pb-0">
+      <main class="min-h-screen bg-background text-foreground pb-32 md:pb-20">
         <!-- ══════════════ HERO 2 COLUNAS ══════════════ -->
         <style>
           /* Terminal hero */
@@ -519,7 +519,6 @@
         </script>
         <section
           class="border-y border-primary/20 bg-[hsl(0_0%_5%)] overflow-hidden mt-8 md:mt-12"
-          data-aos="fade-up"
         >
           <div class="flex items-center py-2.5 gap-3 px-4">
             <span class="relative flex-shrink-0 w-1.5 h-1.5"
@@ -532,7 +531,7 @@
             ></span>
             <div class="relative flex-1 overflow-hidden">
               <div
-                class="flex whitespace-nowrap animate-ticker will-change-transform"
+                class="flex whitespace-nowrap aib-ticker will-change-transform"
               >
                 <span class="font-mono text-[11px] text-primary/70 pr-16"
                   >Alunos estão faturando com IA nesse
@@ -973,15 +972,9 @@
         </section>
         <style>
           .story-fade {
-            opacity: 0;
-            transform: translateY(18px);
-            transition:
-              opacity 0.6s ease-out,
-              transform 0.6s ease-out;
-          }
-          .story-fade.visible {
             opacity: 1;
-            transform: translateY(0);
+            transform: none;
+            transition: none;
           }
           @media (prefers-reduced-motion: reduce) {
             .story-fade,
@@ -1024,8 +1017,8 @@
               border-radius: 10px;
               overflow: hidden;
               font-family: "Courier New", "Consolas", monospace;
-              font-size: 12.5px;
-              line-height: 1.5;
+              font-size: 13px;
+              line-height: 1.7;
             }
             .vscode-topbar {
               background: #161b22;
@@ -1060,9 +1053,9 @@
               margin-left: 6px;
             }
             .vscode-body {
-              padding: 14px 16px 18px;
+              padding: 16px 18px 20px;
               counter-reset: codeline;
-              max-height: 440px;
+              max-height: 480px;
               overflow-y: auto;
               scrollbar-width: thin;
               scrollbar-color: hsl(82 100% 50% / 0.3) transparent;
@@ -1081,10 +1074,11 @@
               display: flex;
               gap: 10px;
               counter-increment: codeline;
+              align-items: flex-start;
             }
             .code-ln {
               flex-shrink: 0;
-              width: 20px;
+              width: 24px;
               text-align: right;
               color: rgba(255, 255, 255, 0.18);
               font-size: 11px;
@@ -1096,7 +1090,9 @@
             }
             .code-text {
               flex: 1;
-              white-space: pre;
+              white-space: normal;
+              word-break: break-word;
+              min-width: 0;
             }
             /* syntax colors */
             .sk {
@@ -1264,175 +1260,23 @@
                   <span class="vscode-fname">jornada-aibuilder.js</span>
                 </div>
                 <div class="vscode-body">
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text sc"
-                      >// ✦ Jornada AI Builder Academy</span
-                    >
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text sdim">&nbsp;</span>
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text"
-                      ><span class="sk">const</span>
-                      <span class="sn">jornada</span> =
-                      <span class="sk">async</span> ()
-                      <span class="sk">=&gt;</span> {</span
-                    >
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text sdim">&nbsp;</span>
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text">
-                      <span class="sc">// ETAPA 1 — fundação</span></span
-                    >
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text">
-                      <span class="sk">await</span>
-                      <span class="sf">aprenderIA</span>({
-                      <span class="sn">tempo</span>:
-                      <span class="ss">'dias'</span>,
-                      <span class="sn">teoria</span>:
-                      <span class="sk">false</span> });</span
-                    >
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text">
-                      <span class="sc"
-                        >// ✓ ferramentas certas identificadas</span
-                      ></span
-                    >
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text sdim">&nbsp;</span>
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text">
-                      <span class="sc">// ETAPA 2 — construção</span></span
-                    >
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text">
-                      <span class="sk">const</span>
-                      <span class="sn">sistema</span> =
-                      <span class="sk">await</span>
-                      <span class="sf">criarSistema</span>({</span
-                    >
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text">
-                      <span class="sn">funil</span>:
-                      <span class="sk">true</span>,
-                      <span class="sn">automacao</span>:
-                      <span class="sk">true</span>, <span class="sn">ia</span>:
-                      <span class="sk">true</span></span
-                    >
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text"> });</span>
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text sdim">&nbsp;</span>
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text">
-                      <span class="sc">// ETAPA 3 — automação 24h</span></span
-                    >
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text">
-                      <span class="sk">await</span>
-                      <span class="sf">ligar</span
-                      >(sistema.piloto_automatico);</span
-                    >
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text">
-                      <span class="sc"
-                        >// ✓ vendendo enquanto você dorme</span
-                      ></span
-                    >
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text sdim">&nbsp;</span>
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text">
-                      <span class="sc">// ETAPA 4 — primeira venda</span></span
-                    >
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text">
-                      <span class="sk">const</span>
-                      <span class="sn">resultado</span> =
-                      <span class="sk">await</span>
-                      <span class="sf">gerarVenda</span>();</span
-                    >
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text">
-                      console.<span class="sf">log</span>(<span class="ss"
-                        >'✓ R$'</span
-                      >
-                      + resultado.<span class="sn">valor</span>);</span
-                    >
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text sdim">&nbsp;</span>
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text">
-                      <span class="sc">// ETAPA 5 — escala</span></span
-                    >
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text">
-                      <span class="sk">return</span>
-                      <span class="sf">escalar</span>({
-                      <span class="sn">meta</span>:
-                      <span class="ss">'receita previsível'</span> });</span
-                    >
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text">};</span>
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text sdim">&nbsp;</span>
-                  </div>
-                  <div class="code-row">
-                    <span class="code-ln"></span
-                    ><span class="code-text"
-                      ><span class="sf">jornada</span>();
-                      <span class="sc">// execute agora.</span></span
-                    >
-                  </div>
+                  <div class="code-row"><span class="code-ln"></span><span class="code-text sc">// ✦ Jornada AI Builder Academy</span></div>
+                  <div class="code-row"><span class="code-ln"></span><span class="code-text sdim">&nbsp;</span></div>
+                  <div class="code-row"><span class="code-ln"></span><span class="code-text"><span class="sk">const</span> <span class="sn">jornada</span> = <span class="sk">async</span> () <span class="sk">=&gt;</span> {</span></div>
+                  <div class="code-row"><span class="code-ln"></span><span class="code-text sc">// ETAPA 1 — fundação</span></div>
+                  <div class="code-row"><span class="code-ln"></span><span class="code-text"><span class="sk">await</span> <span class="sf">aprenderIA</span>({ <span class="sn">teoria</span>: <span class="sk">false</span> });</span></div>
+                  <div class="code-row"><span class="code-ln"></span><span class="code-text sc">// ✓ ferramentas identificadas</span></div>
+                  <div class="code-row"><span class="code-ln"></span><span class="code-text sdim">&nbsp;</span></div>
+                  <div class="code-row"><span class="code-ln"></span><span class="code-text sc">// ETAPA 2 — construção</span></div>
+                  <div class="code-row"><span class="code-ln"></span><span class="code-text"><span class="sf">criarSistema</span>({ <span class="sn">funil</span>: <span class="sk">true</span>, <span class="sn">ia</span>: <span class="sk">true</span> });</span></div>
+                  <div class="code-row"><span class="code-ln"></span><span class="code-text sdim">&nbsp;</span></div>
+                  <div class="code-row"><span class="code-ln"></span><span class="code-text sc">// ETAPA 3 — automação 24h</span></div>
+                  <div class="code-row"><span class="code-ln"></span><span class="code-text"><span class="sf">ligar</span>(piloto_automatico);</span></div>
+                  <div class="code-row"><span class="code-ln"></span><span class="code-text sc">// ✓ vendas enquanto dorme</span></div>
+                  <div class="code-row"><span class="code-ln"></span><span class="code-text sdim">&nbsp;</span></div>
+                  <div class="code-row"><span class="code-ln"></span><span class="code-text sc">// ETAPA 4 — primeira venda</span></div>
+                  <div class="code-row"><span class="code-ln"></span><span class="code-text"><span class="sf">gerarVenda</span>();</span></div>
+                  <div class="code-row"><span class="code-ln"></span><span class="code-text"><span class="sf">jornada</span>(); <span class="sc">// execute agora.</span></span></div>
                 </div>
               </div>
             </div>
@@ -1771,7 +1615,7 @@
                   href="https://wa.me/5531996851564?text=CALCULEI+MEU+POTENCIAL+QUERO+COMECAR"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 min-h-[52px] md:min-h-0 bg-primary text-primary-foreground font-heading font-bold uppercase tracking-wider hover:bg-[hsl(82_100%_44%)] hover:scale-[1.02] active:scale-[0.98] h-11 rounded-md text-base px-8 py-4"
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 min-h-[52px] md:min-h-0 bg-primary text-primary-foreground font-heading font-bold uppercase tracking-wider hover:bg-[hsl(82_100%_44%)] hover:scale-[1.02] active:scale-[0.98] h-11 rounded-md text-base px-6 py-4 w-full sm:w-auto max-w-full"
                   >Quero esse resultado →</a
                 >
               </div>
@@ -2775,7 +2619,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
               <!-- COMBO INICIANTE -->
               <div
-                class="relative rounded-lg border p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 flex flex-col border-border bg-card hover:border-primary/40"
+                class="relative rounded-lg border p-6 md:p-8 pt-8 md:pt-10 mt-4 transition-all duration-300 hover:-translate-y-1 flex flex-col border-border bg-card hover:border-primary/40"
                 data-aos="fade-up"
               >
                 <span
@@ -2838,7 +2682,7 @@
 
               <!-- COMBO ESCALA -->
               <div
-                class="relative rounded-lg border p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 flex flex-col border-border bg-card hover:border-primary/40"
+                class="relative rounded-lg border p-6 md:p-8 pt-8 md:pt-10 mt-4 transition-all duration-300 hover:-translate-y-1 flex flex-col border-border bg-card hover:border-primary/40"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
@@ -3384,7 +3228,7 @@
                 href="https://wa.me/5531996851564?text=Quero+o+Combo+Completo+por+R%24267"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 min-h-[52px] md:min-h-0 bg-primary text-primary-foreground font-heading font-bold uppercase tracking-wider hover:bg-[hsl(82_100%_44%)] hover:scale-[1.02] active:scale-[0.98] h-11 rounded-md text-base px-12 py-4"
+                class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 min-h-[52px] md:min-h-0 bg-primary text-primary-foreground font-heading font-bold uppercase tracking-wider hover:bg-[hsl(82_100%_44%)] hover:scale-[1.02] active:scale-[0.98] h-11 rounded-md text-base px-6 py-4 w-full sm:w-auto max-w-full"
                 >Quero o sistema completo →</a
               >
             </div>
@@ -3937,7 +3781,7 @@
                 href="https://wa.me/5531996851564?text=Quero+o+Combo+Completo+por+R%24267"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 min-h-[52px] md:min-h-0 bg-primary text-primary-foreground font-heading font-bold uppercase tracking-wider hover:bg-[hsl(82_100%_44%)] hover:scale-[1.02] active:scale-[0.98] h-11 rounded-md text-base px-12 py-7"
+                class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 min-h-[52px] md:min-h-0 bg-primary text-primary-foreground font-heading font-bold uppercase tracking-wider hover:bg-[hsl(82_100%_44%)] hover:scale-[1.02] active:scale-[0.98] h-11 rounded-md text-base px-6 py-4 w-full sm:w-auto max-w-full"
                 >Quero o sistema completo →</a
               >
               <a
