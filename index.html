@@ -1,0 +1,4145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              background: 'hsl(0 0% 4%)',
+              foreground: 'hsl(0 0% 98%)',
+              primary: 'hsl(82 100% 50%)',
+              'primary-foreground': 'hsl(0 0% 4%)',
+              'muted-foreground': 'hsl(0 0% 55%)',
+              border: 'hsl(82 100% 50% / 0.2)',
+            },
+            fontFamily: {
+              heading: ['Syne', 'sans-serif'],
+              mono: ['Space Mono', 'monospace'],
+              sans: ['DM Sans', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+    <title>AIBuilder — Saia da Teoria. Comece a Faturar.</title>
+    <meta
+      name="description"
+      content="Playbooks de execução com IA para você copiar, colar e gerar receita. Tráfego, Agências, Vendas e Lançamento. Primeira venda em até 14 dias."
+    />
+    <meta name="author" content="AIBuilder" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@AIBuilder" />
+
+    <meta
+      property="og:title"
+      content="AIBuilder — Saia da Teoria. Comece a Faturar."
+    />
+    <meta
+      name="twitter:title"
+      content="AIBuilder — Saia da Teoria. Comece a Faturar."
+    />
+    <meta
+      property="og:description"
+      content="Sistemas prontos com IA. Copie, execute, fature. Playbooks de Tráfego, Agências, Vendas com IA e Lançamento Digital."
+    />
+    <meta
+      name="twitter:description"
+      content="Sistemas prontos com IA. Copie, execute, fature. Playbooks de Tráfego, Agências, Vendas com IA e Lançamento Digital."
+    />
+
+    <style>
+      @font-face {
+        font-family: "CameraPlainVariable";
+        src: url("https://cdn.gpteng.co/mcp-widgets/v1/fonts/CameraPlainVariable.woff2")
+          format("woff2");
+        font-weight: 100 900;
+        font-style: normal;
+        font-display: swap;
+      }
+
+    </style>
+    <style id="aibuilder-custom">
+      /* FASE 1: Ticker infinito */
+      .animate-ticker {
+        animation: ticker 35s linear infinite;
+        will-change: transform;
+      }
+      .animate-ticker:hover {
+        animation-play-state: paused;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .animate-ticker {
+          animation: none !important;
+        }
+      }
+
+      /* FASE 2: Calculadora layout seguro */
+      .calc-result-cell {
+        min-width: 0;
+        overflow: hidden;
+      }
+      .calc-value-num {
+        font-variant-numeric: tabular-nums;
+        overflow-wrap: break-word;
+        word-break: break-word;
+      }
+
+      /* FASE 3: fade-in-up com delay via style attr */
+      .animate-fade-in-up {
+        animation: fade-in-up 0.5s ease-out forwards;
+      }
+
+      /* FASE 5: Ultimate ring */
+      .ring-ultimate {
+        box-shadow:
+          0 0 40px hsl(82 100% 50% / 0.1),
+          0 0 0 1px hsl(82 100% 50% / 0.2);
+      }
+
+      /* FASE 7: Reveal por scroll */
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.55s ease-out,
+          transform 0.55s ease-out;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-delay-1 {
+        transition-delay: 80ms;
+      }
+      .reveal-delay-2 {
+        transition-delay: 160ms;
+      }
+      .reveal-delay-3 {
+        transition-delay: 240ms;
+      }
+      .reveal-delay-4 {
+        transition-delay: 320ms;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .reveal,
+        .reveal.visible {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+      }
+
+      /* FASE 4: Safe area iPhone */
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+
+      /* FASE 8: Mobile h1 overflow */
+      .h1-hero {
+        overflow-wrap: normal;
+        word-break: normal;
+        hyphens: none;
+      }
+
+      /* FASE 10: Scroll suave e offset âncora */
+      html {
+        scroll-behavior: smooth;
+      }
+      #gratuitos,
+      #pagos {
+        scroll-margin-top: 80px;
+      }
+
+      /* FASE 11: AOS keyframe fallback */
+      @keyframes aosFadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      [data-aos="fade-up"].aos-animate {
+        animation: aosFadeUp 0.6s ease-out both;
+      }
+
+      :root {
+        --primary: 82 100% 50%;
+        --primary-foreground: 0 0% 4%;
+        --background: 0 0% 4%;
+        --foreground: 0 0% 98%;
+        --muted-foreground: 0 0% 55%;
+        --secondary: 0 0% 12%;
+        --border: 82 100% 50% / 0.2;
+        --card: 0 0% 7%;
+        --ring: 82 100% 50%;
+      }
+
+      @keyframes ticker {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  </head>
+
+  <body>
+    <div id="root">
+      <div
+        role="region"
+        aria-label="Notifications (F8)"
+        tabindex="-1"
+        style="pointer-events: none"
+      >
+        <ol
+          tabindex="-1"
+          class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"
+        ></ol>
+      </div>
+      <section
+        aria-label="Notifications alt+T"
+        tabindex="-1"
+        aria-live="polite"
+        aria-relevant="additions text"
+        aria-atomic="false"
+      ></section>
+      <main class="min-h-screen bg-background text-foreground pb-20 md:pb-0">
+        <!-- ══════════════ HERO 2 COLUNAS ══════════════ -->
+        <style>
+          /* Terminal hero */
+          .hero-terminal {
+            background: #0d1117;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            font-family: "Courier New", "Consolas", monospace;
+            font-size: 13px;
+            line-height: 1.7;
+          }
+          .hero-terminal-bar {
+            background: #161b22;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+          }
+          .hero-terminal-dots {
+            display: flex;
+            gap: 6px;
+          }
+          .hero-terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+          }
+          .hero-terminal-dot.red {
+            background: #ff5f56;
+          }
+          .hero-terminal-dot.yellow {
+            background: #ffbd2e;
+          }
+          .hero-terminal-dot.green {
+            background: #27c93f;
+          }
+          .hero-terminal-title {
+            font-family: "Courier New", monospace;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-left: 8px;
+            letter-spacing: 0.05em;
+          }
+          .hero-terminal-body {
+            padding: 28px 22px 32px;
+            height: 420px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 3px;
+          }
+          .term-line {
+            display: block;
+            white-space: pre;
+            overflow: hidden;
+            line-height: 2;
+            min-height: 1.8em;
+            padding: 1px 0;
+          }
+          .term-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 14px;
+            background: hsl(82 100% 50% / 0.9);
+            vertical-align: text-bottom;
+            margin-left: 3px;
+            animation: blink 1s step-end infinite;
+          }
+          @keyframes blink {
+            0%,
+            100% {
+              opacity: 1;
+            }
+            50% {
+              opacity: 0;
+            }
+          }
+          .tc-prompt {
+            color: hsl(82 100% 60%);
+          }
+          .tc-cmd {
+            color: #9cdcfe;
+          }
+          .tc-ok {
+            color: #4ec9b0;
+          }
+          .tc-comment {
+            color: #6a9955;
+          }
+          .tc-string {
+            color: #ce9178;
+          }
+          .tc-num {
+            color: #b5cea8;
+          }
+          .tc-dim {
+            color: rgba(255, 255, 255, 0.25);
+          }
+
+          /* Hero grid responsive */
+          .hero-terminal {
+            margin-top: 0;
+          }
+          .hero-terminal-body {
+            padding-top: 28px;
+          }
+          @media (max-width: 1023px) {
+            .hero-terminal {
+              margin-top: 48px;
+            }
+          }
+        </style>
+
+        <section
+          class="min-h-[90vh] flex items-center px-6 py-20 relative overflow-visible"
+        >
+          <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(82_100%_50%/0.05)_0%,transparent_60%)]"
+          ></div>
+          <div class="max-w-6xl mx-auto w-full relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <!-- COLUNA ESQUERDA: texto -->
+              <div>
+                <span
+                  class="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-6 block"
+                  >AI Builder Academy — Playbooks de execução</span
+                >
+                <h1
+                  class="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold leading-[1.05] mb-5 h1-hero"
+                >
+                  <span class="whitespace-nowrap">Saia da teoria.</span><br />
+                  <span class="text-primary">Comece a faturar.</span>
+                </h1>
+                <p
+                  class="font-body text-lg md:text-xl text-muted-foreground mb-5 leading-relaxed"
+                >
+                  Sistemas prontos com IA para você copiar, executar e gerar
+                  receita, sem depender de esforço manual, sem ficar para trás
+                  no mercado.
+                </p>
+                <p
+                  class="font-mono text-sm mb-8 pl-4 border-l-2 border-primary/50"
+                  style="color: hsl(82 100% 65% / 0.85)"
+                >
+                  Quem não usa IA hoje já perdeu para quem usa. A questão é
+                  quando você decide entrar.
+                </p>
+                <div
+                  class="flex flex-col sm:flex-row gap-4"
+                  style="padding-top: 8px"
+                >
+                  <a
+                    href="https://wa.me/5531996851564?text=COME%C3%87AR+DE+GRA%C3%87A"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 min-h-[52px] md:min-h-0 bg-primary text-primary-foreground font-heading font-bold uppercase tracking-wider hover:bg-[hsl(82_100%_44%)] hover:scale-[1.02] active:scale-[0.98] h-11 rounded-md text-base px-10 py-4"
+                    >Começar de graça</a
+                  >
+                  <a
+                    href="#gratuitos"
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 min-h-[52px] md:min-h-0 border-2 border-primary text-primary font-heading font-semibold uppercase tracking-wider hover:bg-primary hover:text-primary-foreground hover:scale-[1.02] active:scale-[0.98] h-11 rounded-md text-base px-10 py-4"
+                    >Ver Playbooks</a
+                  >
+                </div>
+              </div>
+
+              <!-- COLUNA DIREITA: terminal VS Code -->
+              <div class="hero-terminal" role="presentation" aria-hidden="true">
+                <div class="hero-terminal-bar">
+                  <div class="hero-terminal-dots">
+                    <span class="hero-terminal-dot red"></span>
+                    <span class="hero-terminal-dot yellow"></span>
+                    <span class="hero-terminal-dot green"></span>
+                  </div>
+                  <span class="hero-terminal-title"
+                    >aibuilder — sistema de automação</span
+                  >
+                </div>
+                <div class="hero-terminal-body" id="hero-term-body">
+                  <!-- linhas injetadas pelo JS -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <script>
+          /* ── Terminal Hero Typing ─────────────────────── */
+          (function () {
+            var body = document.getElementById("hero-term-body");
+            if (!body) return;
+
+            var LINES = [
+              {
+                text: "$ iniciando sistema de automação com IA...",
+                cls: "tc-prompt",
+              },
+              { text: "", cls: "" },
+              {
+                text: "> configurando funil de vendas automático",
+                cls: "tc-cmd",
+              },
+              { text: "  ✓ pipeline ativo em 3 etapas", cls: "tc-ok" },
+              { text: "", cls: "" },
+              { text: "> integrando WhatsApp + chatbot IA", cls: "tc-cmd" },
+              {
+                text: "  ✓ atendimento 24h no piloto automático",
+                cls: "tc-ok",
+              },
+              { text: "", cls: "" },
+              { text: "> gerando primeira venda...", cls: "tc-cmd" },
+              { text: "  ✓ R$ 2.500 faturados em 7 dias", cls: "tc-ok tc-num" },
+              { text: "", cls: "" },
+              { text: "> escalando faturamento com IA...", cls: "tc-cmd" },
+              { text: "  ✓ sistema rodando enquanto você dorme", cls: "tc-ok" },
+              { text: "", cls: "" },
+              { text: "// Isso pode ser você. Hoje.", cls: "tc-comment" },
+            ];
+
+            var CHAR_DELAY = 28; /* ms por caractere */
+            var LINE_PAUSE = 320; /* ms entre linhas */
+            var END_PAUSE = 3200; /* ms antes de reiniciar */
+            var BLANK_PAUSE = 120; /* ms para linhas vazias */
+
+            var lineEls = [];
+            var cursorEl = null;
+
+            function buildDOM() {
+              body.innerHTML = "";
+              lineEls = [];
+              LINES.forEach(function () {
+                var s = document.createElement("span");
+                s.className = "term-line";
+                body.appendChild(s);
+                lineEls.push(s);
+              });
+              cursorEl = document.createElement("span");
+              cursorEl.className = "term-cursor";
+              body.appendChild(cursorEl);
+            }
+
+            function typeLine(idx, cb) {
+              if (idx >= LINES.length) {
+                cb();
+                return;
+              }
+              var cfg = LINES[idx];
+              var el = lineEls[idx];
+              el.className = "term-line " + (cfg.cls || "");
+
+              if (cfg.text === "") {
+                el.innerHTML = "&nbsp;";
+                if (cursorEl && cursorEl.parentNode) body.appendChild(cursorEl);
+                setTimeout(function () {
+                  typeLine(idx + 1, cb);
+                }, BLANK_PAUSE);
+                return;
+              }
+
+              var i = 0;
+              if (cursorEl && cursorEl.parentNode) el.appendChild(cursorEl);
+
+              function step() {
+                if (i < cfg.text.length) {
+                  el.textContent = cfg.text.slice(0, i + 1);
+                  el.appendChild(cursorEl);
+                  i++;
+                  setTimeout(step, CHAR_DELAY);
+                } else {
+                  if (cursorEl && cursorEl.parentNode)
+                    body.appendChild(cursorEl);
+                  setTimeout(function () {
+                    typeLine(idx + 1, cb);
+                  }, LINE_PAUSE);
+                }
+              }
+              step();
+            }
+
+            function run() {
+              buildDOM();
+              typeLine(0, function () {
+                setTimeout(run, END_PAUSE);
+              });
+            }
+
+            /* inicia após render */
+            if (document.readyState === "loading") {
+              document.addEventListener("DOMContentLoaded", function () {
+                setTimeout(run, 600);
+              });
+            } else {
+              setTimeout(run, 600);
+            }
+          })();
+        </script>
+        <section
+          class="border-y border-primary/20 bg-[hsl(0_0%_5%)] overflow-hidden mt-8 md:mt-12"
+          data-aos="fade-up"
+        >
+          <div class="flex items-center py-2.5 gap-3 px-4">
+            <span class="relative flex-shrink-0 w-1.5 h-1.5"
+              ><span
+                class="absolute inset-0 rounded-full bg-primary animate-ping opacity-75"
+              ></span
+              ><span
+                class="relative block w-1.5 h-1.5 rounded-full bg-primary"
+              ></span
+            ></span>
+            <div class="relative flex-1 overflow-hidden">
+              <div
+                class="flex whitespace-nowrap animate-ticker will-change-transform"
+              >
+                <span class="font-mono text-[11px] text-primary/70 pr-16"
+                  >Alunos estão faturando com IA nesse
+                  momento&nbsp;&nbsp;·&nbsp;&nbsp;Transforme conhecimento em
+                  renda com automações simples&nbsp;&nbsp;·&nbsp;&nbsp;Comece do
+                  zero e valide seu primeiro negócio ainda
+                  hoje&nbsp;&nbsp;·&nbsp;&nbsp;IA não é o futuro — é o presente
+                  lucrativo&nbsp;&nbsp;·&nbsp;&nbsp;Copie o sistema. Execute.
+                  Fature.&nbsp;&nbsp;·&nbsp;&nbsp;Sua primeira venda pode
+                  acontecer em 7 dias&nbsp;&nbsp;·&nbsp;&nbsp;Pare de estudar.
+                  Comece a construir.&nbsp;&nbsp;·&nbsp;&nbsp;</span
+                ><span
+                  class="font-mono text-[11px] text-primary/70 pr-16"
+                  aria-hidden="true"
+                  >Alunos estão faturando com IA nesse
+                  momento&nbsp;&nbsp;·&nbsp;&nbsp;Transforme conhecimento em
+                  renda com automações simples&nbsp;&nbsp;·&nbsp;&nbsp;Comece do
+                  zero e valide seu primeiro negócio ainda
+                  hoje&nbsp;&nbsp;·&nbsp;&nbsp;IA não é o futuro — é o presente
+                  lucrativo&nbsp;&nbsp;·&nbsp;&nbsp;Copie o sistema. Execute.
+                  Fature.&nbsp;&nbsp;·&nbsp;&nbsp;Sua primeira venda pode
+                  acontecer em 7 dias&nbsp;&nbsp;·&nbsp;&nbsp;Pare de estudar.
+                  Comece a construir.&nbsp;&nbsp;·&nbsp;&nbsp;</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="px-6 py-16 border-y border-border" data-aos="fade-up">
+          <div
+            class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
+          >
+            <div>
+              <span
+                class="font-heading text-4xl md:text-5xl font-extrabold text-primary block mb-2"
+                >1.500+</span
+              >
+              <span
+                class="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground"
+                >Sistemas entregues</span
+              >
+              <span
+                class="font-mono text-muted-foreground mt-1 block"
+                style="
+                  font-size: 9px;
+                  opacity: 0.5;
+                  text-transform: uppercase;
+                  letter-spacing: 0.2em;
+                "
+                >desde o lançamento em 2024</span
+              >
+            </div>
+            <div>
+              <span
+                class="font-heading text-4xl md:text-5xl font-extrabold text-primary block mb-2"
+                >R$ 220K</span
+              >
+              <span
+                class="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground"
+                >Faturados por alunos</span
+              >
+              <span
+                class="font-mono text-muted-foreground mt-1 block"
+                style="
+                  font-size: 9px;
+                  opacity: 0.5;
+                  text-transform: uppercase;
+                  letter-spacing: 0.2em;
+                "
+                >resultado direto de execução</span
+              >
+            </div>
+            <div>
+              <span
+                class="font-heading text-4xl md:text-5xl font-extrabold text-primary block mb-2"
+                >14 dias</span
+              >
+              <span
+                class="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground"
+                >Até a primeira venda</span
+              >
+              <span
+                class="font-mono text-muted-foreground mt-1 block"
+                style="
+                  font-size: 9px;
+                  opacity: 0.5;
+                  text-transform: uppercase;
+                  letter-spacing: 0.2em;
+                "
+                >média dos alunos ativos</span
+              >
+            </div>
+          </div>
+        </section>
+        <section class="px-6 py-20 md:py-28" data-aos="fade-up">
+          <div class="max-w-6xl mx-auto">
+            <span
+              class="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-4 block"
+              >Por que isso é diferente de tudo que você já tentou</span
+            >
+            <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">
+              Você não precisa de mais um curso.
+            </h2>
+            <p class="font-body text-muted-foreground mb-12 max-w-2xl">
+              Você precisa de um
+              <strong class="text-foreground">sistema que funcione</strong>. Sem
+              professor. Sem módulo infinito. Sem esperar o "momento certo". Só
+              execução.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div
+                class="rounded-lg border border-border bg-card p-6 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
+                data-aos="fade-up"
+              >
+                <span class="text-3xl mb-4 block">⚙️</span>
+                <h3 class="font-heading font-bold text-lg mb-2">
+                  Sistema pronto
+                </h3>
+                <p
+                  class="font-body text-sm text-muted-foreground leading-relaxed"
+                >
+                  Não é aula. É um sistema real que você copia, cola e executa
+                  no mesmo dia. Resultado medido, não prometido.
+                </p>
+              </div>
+              <div
+                class="rounded-lg border border-border bg-card p-6 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <span class="text-3xl mb-4 block">🤖</span>
+                <h3 class="font-heading font-bold text-lg mb-2">
+                  IA como alavanca
+                </h3>
+                <p
+                  class="font-body text-sm text-muted-foreground leading-relaxed"
+                >
+                  Quem opera sem IA trabalha 10x mais pelo mesmo resultado. Você
+                  vai usar IA como vantagem competitiva real.
+                </p>
+              </div>
+              <div
+                class="rounded-lg border border-border bg-card p-6 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <span class="text-3xl mb-4 block">🎯</span>
+                <h3 class="font-heading font-bold text-lg mb-2">
+                  Zero dependência manual
+                </h3>
+                <p
+                  class="font-body text-sm text-muted-foreground leading-relaxed"
+                >
+                  Chega de trocar tempo por dinheiro um a um. Aqui você monta
+                  sistemas que geram resultado enquanto você dorme.
+                </p>
+              </div>
+              <div
+                class="rounded-lg border border-border bg-card p-6 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <span class="text-3xl mb-4 block">💰</span>
+                <h3 class="font-heading font-bold text-lg mb-2">Escala real</h3>
+                <p
+                  class="font-body text-sm text-muted-foreground leading-relaxed"
+                >
+                  Cada playbook foi construído para gerar receita, não para te
+                  entreter. ROI ou seu dinheiro de volta em 7 dias.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="gratuitos" class="px-6 py-20 md:py-28" data-aos="fade-up">
+          <div class="max-w-6xl mx-auto">
+            <span
+              class="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-4 block"
+              >Topo do funil — gratuito</span
+            >
+            <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">
+              Antes de qualquer coisa, teste estes playbooks gratuitos
+            </h2>
+            <p class="text-muted-foreground font-body mb-12 max-w-xl">
+              Gera valor real imediato. Quebra objeção. Cria reciprocidade. Sem
+              cartão, sem pegadinha.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div
+                class="relative rounded-lg border p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 flex flex-col border-border bg-card/50 hover:border-muted-foreground"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <span
+                  class="absolute -top-3 left-6 font-mono text-[10px] uppercase tracking-[0.2em] px-3 py-1 rounded-sm bg-muted text-muted-foreground"
+                  >GRÁTIS</span
+                >
+                <h3 class="font-heading font-bold mb-3 text-lg md:text-xl">
+                  Playbook de Tráfego
+                </h3>
+                <p
+                  class="font-body text-sm text-muted-foreground mb-5 leading-relaxed flex-grow"
+                >
+                  O básico para rodar suas primeiras campanhas e parar de
+                  queimar dinheiro em anúncio.
+                </p>
+                <div
+                  class="relative rounded-lg border border-border/30 overflow-hidden bg-[hsl(0_0%_5%)] p-4 mb-5 h-[120px]"
+                >
+                  <div class="space-y-2.5">
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 90%; opacity: 0.9"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 75%; opacity: 0.9"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 85%; filter: blur(1px); opacity: 0.6"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 60%; filter: blur(2px); opacity: 0.6"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 80%; filter: blur(3px); opacity: 0.6"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 70%; filter: blur(4px); opacity: 0.6"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 55%; filter: blur(6px); opacity: 0.6"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 88%; filter: blur(8px); opacity: 0.6"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 65%; filter: blur(8px); opacity: 0.6"
+                    ></div>
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 font-mono text-[10px] uppercase tracking-[0.15em] text-primary/80 bg-card/90 backdrop-blur-sm px-2 py-1 rounded-sm border border-primary/20"
+                  >
+                    Desbloqueie →
+                  </div>
+                </div>
+                <a
+                  href="https://wa.me/5531996851564?text=GRATIS+TR%C3%81FEGO"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 min-h-[52px] md:min-h-0 border-2 border-primary text-primary font-heading font-semibold uppercase tracking-wider hover:bg-primary hover:text-primary-foreground hover:scale-[1.02] active:scale-[0.98] h-10 px-4 py-2 w-full"
+                  >Acessar agora</a
+                >
+              </div>
+              <div
+                class="relative rounded-lg border p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 flex flex-col border-border bg-card/50 hover:border-muted-foreground"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <span
+                  class="absolute -top-3 left-6 font-mono text-[10px] uppercase tracking-[0.2em] px-3 py-1 rounded-sm bg-muted text-muted-foreground"
+                  >GRÁTIS</span
+                >
+                <h3 class="font-heading font-bold mb-3 text-lg md:text-xl">
+                  Playbook de Agências
+                </h3>
+                <p
+                  class="font-body text-sm text-muted-foreground mb-5 leading-relaxed flex-grow"
+                >
+                  Estruture sua operação, precifique certo e pare de trocar hora
+                  por centavo.
+                </p>
+                <div
+                  class="relative rounded-lg border border-border/30 overflow-hidden bg-[hsl(0_0%_5%)] p-4 mb-5 h-[120px]"
+                >
+                  <div class="space-y-2.5">
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 90%; opacity: 0.9"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 75%; opacity: 0.9"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 85%; filter: blur(1px); opacity: 0.6"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 60%; filter: blur(2px); opacity: 0.6"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 80%; filter: blur(3px); opacity: 0.6"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 70%; filter: blur(4px); opacity: 0.6"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 55%; filter: blur(6px); opacity: 0.6"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 88%; filter: blur(8px); opacity: 0.6"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 65%; filter: blur(8px); opacity: 0.6"
+                    ></div>
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 font-mono text-[10px] uppercase tracking-[0.15em] text-primary/80 bg-card/90 backdrop-blur-sm px-2 py-1 rounded-sm border border-primary/20"
+                  >
+                    Desbloqueie →
+                  </div>
+                </div>
+                <a
+                  href="https://wa.me/5531996851564?text=GRATIS+AG%C3%8ANCIAS"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 min-h-[52px] md:min-h-0 border-2 border-primary text-primary font-heading font-semibold uppercase tracking-wider hover:bg-primary hover:text-primary-foreground hover:scale-[1.02] active:scale-[0.98] h-10 px-4 py-2 w-full"
+                  >Acessar agora</a
+                >
+              </div>
+              <div
+                class="relative rounded-lg border p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 flex flex-col border-border bg-card/50 hover:border-muted-foreground"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <span
+                  class="absolute -top-3 left-6 font-mono text-[10px] uppercase tracking-[0.2em] px-3 py-1 rounded-sm bg-muted text-muted-foreground"
+                  >GRÁTIS</span
+                >
+                <h3 class="font-heading font-bold mb-3 text-lg md:text-xl">
+                  Playbook de Vendas
+                </h3>
+                <p
+                  class="font-body text-sm text-muted-foreground mb-5 leading-relaxed flex-grow"
+                >
+                  Scripts, objeções e frameworks para fechar mais, sem parecer
+                  vendedor de curso.
+                </p>
+                <div
+                  class="relative rounded-lg border border-border/30 overflow-hidden bg-[hsl(0_0%_5%)] p-4 mb-5 h-[120px]"
+                >
+                  <div class="space-y-2.5">
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 90%; opacity: 0.9"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 75%; opacity: 0.9"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 85%; filter: blur(1px); opacity: 0.6"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 60%; filter: blur(2px); opacity: 0.6"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 80%; filter: blur(3px); opacity: 0.6"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 70%; filter: blur(4px); opacity: 0.6"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 55%; filter: blur(6px); opacity: 0.6"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 88%; filter: blur(8px); opacity: 0.6"
+                    ></div>
+                    <div
+                      class="h-[8px] rounded-sm bg-foreground/20"
+                      style="width: 65%; filter: blur(8px); opacity: 0.6"
+                    ></div>
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 font-mono text-[10px] uppercase tracking-[0.15em] text-primary/80 bg-card/90 backdrop-blur-sm px-2 py-1 rounded-sm border border-primary/20"
+                  >
+                    Desbloqueie →
+                  </div>
+                </div>
+                <a
+                  href="https://wa.me/5531996851564?text=GRATIS+VENDAS"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 min-h-[52px] md:min-h-0 border-2 border-primary text-primary font-heading font-semibold uppercase tracking-wider hover:bg-primary hover:text-primary-foreground hover:scale-[1.02] active:scale-[0.98] h-10 px-4 py-2 w-full"
+                  >Acessar agora</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="px-6 py-16 md:py-24" data-aos="fade-up">
+          <div class="max-w-3xl mx-auto text-center">
+            <p
+              class="font-body text-lg md:text-xl text-muted-foreground leading-relaxed mb-4 story-fade"
+            >
+              Você comprou curso. Assistiu live. Leu post. Seguiu guru.<br />
+              E continuou no mesmo lugar.
+            </p>
+            <p
+              class="font-heading text-2xl md:text-3xl font-bold leading-tight mb-4 story-fade"
+              style="transition-delay: 120ms"
+            >
+              A verdade que ninguém conta:<br />
+              <span class="text-primary"
+                >informação sem sistema não gera dinheiro.</span
+              >
+            </p>
+            <p
+              class="font-body text-muted-foreground text-base md:text-lg max-w-xl mx-auto story-fade"
+              style="transition-delay: 240ms"
+            >
+              Enquanto você estuda, quem tem sistema está faturando. A vantagem
+              de quem usa IA hoje é
+              <span class="text-foreground font-semibold">absurda</span>. E ela
+              não vai esperar você estar pronto.
+            </p>
+          </div>
+        </section>
+        <style>
+          .story-fade {
+            opacity: 0;
+            transform: translateY(18px);
+            transition:
+              opacity 0.6s ease-out,
+              transform 0.6s ease-out;
+          }
+          .story-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .story-fade,
+            .story-fade.visible {
+              opacity: 1;
+              transform: none;
+              transition: none;
+            }
+          }
+        </style>
+        <script>
+          (function () {
+            var storyEls = document.querySelectorAll(".story-fade");
+            if (!storyEls.length) return;
+            var obs = new IntersectionObserver(
+              function (entries) {
+                entries.forEach(function (e) {
+                  if (e.isIntersecting) {
+                    e.target.classList.add("visible");
+                    obs.unobserve(e.target);
+                  }
+                });
+              },
+              { threshold: 0.2 },
+            );
+            storyEls.forEach(function (el) {
+              obs.observe(el);
+            });
+          })();
+        </script>
+        <!-- ══════════════ TRILHA DO USUÁRIO ══════════════ -->
+        <section
+          class="px-6 py-12 md:py-16 bg-[hsl(0_0%_4%)]"
+          data-aos="fade-up"
+        >
+          <style>
+            .vscode-block {
+              background: #0d1117;
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 10px;
+              overflow: hidden;
+              font-family: "Courier New", "Consolas", monospace;
+              font-size: 12.5px;
+              line-height: 1.5;
+            }
+            .vscode-topbar {
+              background: #161b22;
+              border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+              padding: 9px 14px;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+            }
+            .vscode-dots {
+              display: flex;
+              gap: 5px;
+            }
+            .vscode-dot {
+              width: 11px;
+              height: 11px;
+              border-radius: 50%;
+            }
+            .vscode-dot.r {
+              background: #ff5f56;
+            }
+            .vscode-dot.y {
+              background: #ffbd2e;
+            }
+            .vscode-dot.g {
+              background: #27c93f;
+            }
+            .vscode-fname {
+              font-family: "Courier New", monospace;
+              font-size: 11px;
+              color: rgba(255, 255, 255, 0.35);
+              margin-left: 6px;
+            }
+            .vscode-body {
+              padding: 14px 16px 18px;
+              counter-reset: codeline;
+              max-height: 440px;
+              overflow-y: auto;
+              scrollbar-width: thin;
+              scrollbar-color: hsl(82 100% 50% / 0.3) transparent;
+            }
+            .vscode-body::-webkit-scrollbar {
+              width: 6px;
+            }
+            .vscode-body::-webkit-scrollbar-thumb {
+              background: hsl(82 100% 50% / 0.25);
+              border-radius: 3px;
+            }
+            .vscode-body::-webkit-scrollbar-track {
+              background: transparent;
+            }
+            .code-row {
+              display: flex;
+              gap: 10px;
+              counter-increment: codeline;
+            }
+            .code-ln {
+              flex-shrink: 0;
+              width: 20px;
+              text-align: right;
+              color: rgba(255, 255, 255, 0.18);
+              font-size: 11px;
+              padding-top: 2px;
+              user-select: none;
+            }
+            .code-ln::before {
+              content: counter(codeline);
+            }
+            .code-text {
+              flex: 1;
+              white-space: pre;
+            }
+            /* syntax colors */
+            .sk {
+              color: #c586c0;
+            } /* keyword purple */
+            .sf {
+              color: #dcdcaa;
+            } /* function yellow */
+            .ss {
+              color: #ce9178;
+            } /* string orange */
+            .sc {
+              color: #6a9955;
+            } /* comment green */
+            .sn {
+              color: #9cdcfe;
+            } /* var light-blue */
+            .snum {
+              color: #b5cea8;
+            } /* number */
+            .sok {
+              color: #4ec9b0;
+            } /* ok teal */
+            .sdim {
+              color: rgba(255, 255, 255, 0.22);
+            }
+          </style>
+          <div class="max-w-6xl mx-auto">
+            <span
+              class="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-4 block"
+              >Do zero ao sistema rodando</span
+            >
+            <h2 class="font-heading text-2xl md:text-3xl font-bold mb-3">
+              A jornada que transforma estudo em renda
+            </h2>
+            <p class="text-muted-foreground font-body mb-8 max-w-xl">
+              Cada etapa é uma engrenagem do sistema. Sem pular passos, sem
+              voltar atrás.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+              <!-- ESQUERDA: jornada em texto -->
+              <div class="space-y-4">
+                <div class="flex gap-4 items-start" data-aos="fade-up">
+                  <div
+                    class="w-8 h-8 rounded-full border-2 border-primary/40 bg-[hsl(0_0%_7%)] flex items-center justify-center font-mono text-xs text-primary font-bold flex-shrink-0 mt-1"
+                  >
+                    1
+                  </div>
+                  <div>
+                    <h3 class="font-heading font-bold text-base mb-1">
+                      Aprenda IA do jeito certo
+                    </h3>
+                    <p
+                      class="font-body text-sm text-muted-foreground leading-relaxed"
+                    >
+                      Sem teoria inútil. Você entende quais ferramentas geram
+                      dinheiro e como usá-las em negócios reais, do zero, hoje.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex gap-4 items-start"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div
+                    class="w-8 h-8 rounded-full border-2 border-primary/40 bg-[hsl(0_0%_7%)] flex items-center justify-center font-mono text-xs text-primary font-bold flex-shrink-0 mt-1"
+                  >
+                    2
+                  </div>
+                  <div>
+                    <h3 class="font-heading font-bold text-base mb-1">
+                      Crie seus sistemas
+                    </h3>
+                    <p
+                      class="font-body text-sm text-muted-foreground leading-relaxed"
+                    >
+                      Monte funis, automações e fluxos que funcionam sem
+                      depender de você. Copy, tráfego, atendimento. Tudo com IA
+                      como alavanca.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex gap-4 items-start"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <div
+                    class="w-8 h-8 rounded-full border-2 border-primary/40 bg-[hsl(0_0%_7%)] flex items-center justify-center font-mono text-xs text-primary font-bold flex-shrink-0 mt-1"
+                  >
+                    3
+                  </div>
+                  <div>
+                    <h3 class="font-heading font-bold text-base mb-1">
+                      Automatize a operação
+                    </h3>
+                    <p
+                      class="font-body text-sm text-muted-foreground leading-relaxed"
+                    >
+                      Prospecção, qualificação e fechamento no piloto
+                      automático. Você para de vender pelo esforço e começa a
+                      vender pelo sistema.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex gap-4 items-start"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  <div
+                    class="w-8 h-8 rounded-full border-2 border-primary/40 bg-[hsl(0_0%_7%)] flex items-center justify-center font-mono text-xs text-primary font-bold flex-shrink-0 mt-1"
+                  >
+                    4
+                  </div>
+                  <div>
+                    <h3 class="font-heading font-bold text-base mb-1">
+                      Gere renda previsível
+                    </h3>
+                    <p
+                      class="font-body text-sm text-muted-foreground leading-relaxed"
+                    >
+                      Sua primeira venda. Depois a segunda. Depois um sistema
+                      que gera todo mês, sem depender de sorte, algoritmo ou
+                      indicação.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex gap-4 items-start"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
+                  <div
+                    class="w-8 h-8 rounded-full border-2 border-primary bg-[hsl(0_0%_7%)] flex items-center justify-center font-mono text-xs text-primary font-bold flex-shrink-0 mt-1"
+                  >
+                    5
+                  </div>
+                  <div>
+                    <h3
+                      class="font-heading font-bold text-base mb-1 text-primary"
+                    >
+                      Escale enquanto dorme
+                    </h3>
+                    <p
+                      class="font-body text-sm text-muted-foreground leading-relaxed"
+                    >
+                      Sistema rodando 24h, faturamento crescendo, você focado só
+                      em decisões estratégicas. Isso é o que IA permite, agora.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- DIREITA: código VS Code -->
+              <div class="vscode-block" data-aos="fade-up" data-aos-delay="200">
+                <div class="vscode-topbar">
+                  <div class="vscode-dots">
+                    <span class="vscode-dot r"></span>
+                    <span class="vscode-dot y"></span>
+                    <span class="vscode-dot g"></span>
+                  </div>
+                  <span class="vscode-fname">jornada-aibuilder.js</span>
+                </div>
+                <div class="vscode-body">
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text sc"
+                      >// ✦ Jornada AI Builder Academy</span
+                    >
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text sdim">&nbsp;</span>
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text"
+                      ><span class="sk">const</span>
+                      <span class="sn">jornada</span> =
+                      <span class="sk">async</span> ()
+                      <span class="sk">=&gt;</span> {</span
+                    >
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text sdim">&nbsp;</span>
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text">
+                      <span class="sc">// ETAPA 1 — fundação</span></span
+                    >
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text">
+                      <span class="sk">await</span>
+                      <span class="sf">aprenderIA</span>({
+                      <span class="sn">tempo</span>:
+                      <span class="ss">'dias'</span>,
+                      <span class="sn">teoria</span>:
+                      <span class="sk">false</span> });</span
+                    >
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text">
+                      <span class="sc"
+                        >// ✓ ferramentas certas identificadas</span
+                      ></span
+                    >
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text sdim">&nbsp;</span>
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text">
+                      <span class="sc">// ETAPA 2 — construção</span></span
+                    >
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text">
+                      <span class="sk">const</span>
+                      <span class="sn">sistema</span> =
+                      <span class="sk">await</span>
+                      <span class="sf">criarSistema</span>({</span
+                    >
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text">
+                      <span class="sn">funil</span>:
+                      <span class="sk">true</span>,
+                      <span class="sn">automacao</span>:
+                      <span class="sk">true</span>, <span class="sn">ia</span>:
+                      <span class="sk">true</span></span
+                    >
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text"> });</span>
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text sdim">&nbsp;</span>
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text">
+                      <span class="sc">// ETAPA 3 — automação 24h</span></span
+                    >
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text">
+                      <span class="sk">await</span>
+                      <span class="sf">ligar</span
+                      >(sistema.piloto_automatico);</span
+                    >
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text">
+                      <span class="sc"
+                        >// ✓ vendendo enquanto você dorme</span
+                      ></span
+                    >
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text sdim">&nbsp;</span>
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text">
+                      <span class="sc">// ETAPA 4 — primeira venda</span></span
+                    >
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text">
+                      <span class="sk">const</span>
+                      <span class="sn">resultado</span> =
+                      <span class="sk">await</span>
+                      <span class="sf">gerarVenda</span>();</span
+                    >
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text">
+                      console.<span class="sf">log</span>(<span class="ss"
+                        >'✓ R$'</span
+                      >
+                      + resultado.<span class="sn">valor</span>);</span
+                    >
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text sdim">&nbsp;</span>
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text">
+                      <span class="sc">// ETAPA 5 — escala</span></span
+                    >
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text">
+                      <span class="sk">return</span>
+                      <span class="sf">escalar</span>({
+                      <span class="sn">meta</span>:
+                      <span class="ss">'receita previsível'</span> });</span
+                    >
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text">};</span>
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text sdim">&nbsp;</span>
+                  </div>
+                  <div class="code-row">
+                    <span class="code-ln"></span
+                    ><span class="code-text"
+                      ><span class="sf">jornada</span>();
+                      <span class="sc">// execute agora.</span></span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="px-6 py-20 md:py-28"
+          data-aos="fade-up"
+          id="sim-section"
+        >
+          <style>
+            /* ── Simulator slider reset ───────────────── */
+            .sim-range {
+              -webkit-appearance: none;
+              appearance: none;
+              width: 100%;
+              height: 8px;
+              border-radius: 9999px;
+              outline: none;
+              cursor: pointer;
+              background: transparent;
+              position: relative;
+              z-index: 1;
+            }
+            .sim-range::-webkit-slider-thumb {
+              -webkit-appearance: none;
+              appearance: none;
+              width: 20px;
+              height: 20px;
+              border-radius: 9999px;
+              background: hsl(var(--background));
+              border: 2px solid hsl(var(--primary));
+              cursor: pointer;
+              transition:
+                box-shadow 0.15s ease,
+                transform 0.1s ease;
+              position: relative;
+              z-index: 2;
+            }
+            .sim-range::-moz-range-thumb {
+              width: 20px;
+              height: 20px;
+              border-radius: 9999px;
+              background: hsl(var(--background));
+              border: 2px solid hsl(var(--primary));
+              cursor: pointer;
+              transition:
+                box-shadow 0.15s ease,
+                transform 0.1s ease;
+            }
+            .sim-range:focus-visible::-webkit-slider-thumb {
+              box-shadow: 0 0 0 4px hsl(var(--ring) / 0.4);
+            }
+            .sim-range:focus-visible::-moz-range-thumb {
+              box-shadow: 0 0 0 4px hsl(var(--ring) / 0.4);
+            }
+            .sim-range:active::-webkit-slider-thumb {
+              transform: scale(1.15);
+            }
+            .sim-range:active::-moz-range-thumb {
+              transform: scale(1.15);
+            }
+            /* Track wrapper */
+            .sim-track-wrap {
+              position: relative;
+              height: 8px;
+              border-radius: 9999px;
+              background: hsl(var(--secondary));
+              overflow: hidden;
+            }
+            .sim-track-fill {
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 100%;
+              border-radius: 9999px;
+              background: hsl(var(--primary));
+              pointer-events: none;
+              transition: width 0.05s linear;
+            }
+            /* Overlay range on top of track */
+            .sim-slider-container {
+              position: relative;
+              height: 20px;
+              display: flex;
+              align-items: center;
+            }
+            .sim-slider-container .sim-track-wrap {
+              position: absolute;
+              left: 0;
+              right: 0;
+            }
+            .sim-slider-container .sim-range {
+              position: relative;
+              z-index: 1;
+              background: transparent;
+            }
+            /* ── Result grid ─────────────────────────── */
+            .sim-results-grid {
+              display: grid;
+              grid-template-columns: repeat(3, minmax(0, 1fr));
+              gap: 20px;
+            }
+            @media (max-width: 539px) {
+              .sim-results-grid {
+                grid-template-columns: 1fr;
+              }
+            }
+            @media (min-width: 540px) and (max-width: 767px) {
+              .sim-results-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+              }
+            }
+            /* ── Result card ─────────────────────────── */
+            .sim-result-card {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              gap: 8px;
+              padding: 18px 10px;
+              min-height: 96px;
+              min-width: 0;
+              max-width: 100%;
+              width: 100%;
+              box-sizing: border-box;
+            }
+            /* ── Value wrapper: R$ + number side by side */
+            .sim-value-wrap {
+              display: flex;
+              align-items: baseline;
+              justify-content: center;
+              gap: 3px;
+              min-width: 0;
+              max-width: 100%;
+              width: 100%;
+            }
+            .sim-currency {
+              /*
+               * R$ is always 2 chars — keep it small and stable.
+               * flex-shrink:0 prevents it from collapsing.
+               */
+              font-size: clamp(0.55rem, 1.1vw, 0.75rem);
+              opacity: 0.7;
+              flex-shrink: 0;
+              line-height: 1;
+              white-space: nowrap;
+            }
+            .sim-value-num {
+              /*
+               * Safe ceiling calculation for max value "3.600.000" (9 chars):
+               * Card inner width ≈ 192px (max-w-3xl / 3 cols − padding).
+               * CameraPlainVariable extrabold char ≈ 0.88em wide.
+               * Max safe fs = (192px − 12px for R$) / (9 × 0.88) ≈ 22.7px = 1.42rem.
+               * Use 1.3rem as ceiling with safety margin.
+               */
+              font-size: clamp(0.75rem, 1.7vw, 1.3rem);
+              font-variant-numeric: tabular-nums;
+              font-feature-settings: "tnum";
+              letter-spacing: -0.03em;
+              line-height: 1.15;
+              white-space: nowrap;
+              min-width: 0;
+              max-width: 100%;
+            }
+            .sim-result-label {
+              display: block;
+              flex-shrink: 0;
+              white-space: nowrap;
+              line-height: 1;
+            }
+          </style>
+          <div class="max-w-3xl mx-auto">
+            <span
+              class="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-4 block text-center"
+              >Simulador de receita</span
+            >
+            <h2
+              class="font-heading text-3xl md:text-4xl font-bold mb-3 text-center"
+            >
+              Quanto você poderia estar faturando?
+            </h2>
+            <p
+              class="text-muted-foreground font-body mb-10 text-center max-w-xl mx-auto"
+            >
+              Ajuste o ticket médio e a quantidade de clientes. Veja o potencial
+              real em 90 dias com o sistema rodando.
+            </p>
+            <div
+              class="rounded-xl border border-primary/25 bg-[hsl(0_0%_7%)] p-8 md:p-10"
+            >
+              <!-- Slider: ticket médio -->
+              <div class="mb-8">
+                <div class="flex justify-between items-center mb-3">
+                  <label
+                    for="sim-ticket"
+                    class="font-body text-sm text-muted-foreground"
+                    >Ticket médio por cliente</label
+                  >
+                  <span
+                    id="sim-ticket-display"
+                    class="font-heading font-bold text-primary text-lg tabular-nums"
+                    style="min-width: 7ch; text-align: right"
+                    >R$&nbsp;2.500</span
+                  >
+                </div>
+                <div class="sim-slider-container">
+                  <div class="sim-track-wrap w-full">
+                    <div
+                      id="sim-ticket-fill"
+                      class="sim-track-fill"
+                      style="width: 13.7931%"
+                    ></div>
+                  </div>
+                  <input
+                    id="sim-ticket"
+                    type="range"
+                    class="sim-range"
+                    min="500"
+                    max="15000"
+                    step="100"
+                    value="2500"
+                    aria-label="Ticket médio por cliente"
+                  />
+                </div>
+                <div class="flex mt-2">
+                  <span class="font-mono text-[10px] text-muted-foreground"
+                    >valor em reais</span
+                  >
+                </div>
+              </div>
+              <!-- Slider: clientes por mês -->
+              <div class="mb-10">
+                <div class="flex justify-between items-center mb-3">
+                  <label
+                    for="sim-clients"
+                    class="font-body text-sm text-muted-foreground"
+                    >Clientes por mês</label
+                  >
+                  <span
+                    id="sim-clients-display"
+                    class="font-heading font-bold text-primary text-lg tabular-nums"
+                    style="min-width: 3ch; text-align: right"
+                    >3</span
+                  >
+                </div>
+                <div class="sim-slider-container">
+                  <div class="sim-track-wrap w-full">
+                    <div
+                      id="sim-clients-fill"
+                      class="sim-track-fill"
+                      style="width: 10.5263%"
+                    ></div>
+                  </div>
+                  <input
+                    id="sim-clients"
+                    type="range"
+                    class="sim-range"
+                    min="1"
+                    max="20"
+                    step="1"
+                    value="3"
+                    aria-label="Clientes por mês"
+                  />
+                </div>
+              </div>
+              <!-- Results -->
+              <div class="sim-results-grid mb-8">
+                <div
+                  class="sim-result-card rounded-lg border border-primary/10 bg-black/20"
+                >
+                  <div class="sim-value-wrap">
+                    <span
+                      class="sim-currency font-heading font-extrabold text-primary"
+                      >R$</span
+                    >
+                    <span
+                      id="sim-monthly"
+                      class="sim-value-num font-heading font-extrabold text-primary"
+                      >7.500</span
+                    >
+                  </div>
+                  <span
+                    class="sim-result-label font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground"
+                    >Receita mensal</span
+                  >
+                </div>
+                <div
+                  class="sim-result-card rounded-lg border border-primary/10 bg-black/20"
+                >
+                  <div class="sim-value-wrap">
+                    <span
+                      class="sim-currency font-heading font-extrabold text-primary"
+                      >R$</span
+                    >
+                    <span
+                      id="sim-90days"
+                      class="sim-value-num font-heading font-extrabold text-primary"
+                      >22.500</span
+                    >
+                  </div>
+                  <span
+                    class="sim-result-label font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground"
+                    >Em 90 dias</span
+                  >
+                </div>
+                <div
+                  class="sim-result-card rounded-lg border border-primary/10 bg-black/20"
+                >
+                  <div class="sim-value-wrap">
+                    <span
+                      class="sim-currency font-heading font-extrabold text-primary"
+                      >R$</span
+                    >
+                    <span
+                      id="sim-annual"
+                      class="sim-value-num font-heading font-extrabold text-primary"
+                      >90.000</span
+                    >
+                  </div>
+                  <span
+                    class="sim-result-label font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground"
+                    >Em 1 ano</span
+                  >
+                </div>
+              </div>
+              <p
+                class="font-body text-sm text-muted-foreground text-center mb-6"
+              >
+                Com o sistema certo, esses números são realistas. Não teoria —
+                execução.
+              </p>
+              <div class="text-center">
+                <a
+                  href="https://wa.me/5531996851564?text=CALCULEI+MEU+POTENCIAL+QUERO+COMECAR"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 min-h-[52px] md:min-h-0 bg-primary text-primary-foreground font-heading font-bold uppercase tracking-wider hover:bg-[hsl(82_100%_44%)] hover:scale-[1.02] active:scale-[0.98] h-11 rounded-md text-base px-8 py-4"
+                  >Quero esse resultado →</a
+                >
+              </div>
+            </div>
+          </div>
+          <script>
+            (function () {
+              /* currency formatter for the header displays */
+              var currFmt = new Intl.NumberFormat("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+                maximumFractionDigits: 0,
+              });
+              /* number-only formatter for the result cards (R$ is rendered separately in HTML) */
+              var numFmt = new Intl.NumberFormat("pt-BR", {
+                maximumFractionDigits: 0,
+              });
+
+              var ticketInput = document.getElementById("sim-ticket");
+              var clientsInput = document.getElementById("sim-clients");
+              var ticketDisplay = document.getElementById("sim-ticket-display");
+              var clientsDisplay = document.getElementById(
+                "sim-clients-display",
+              );
+              var ticketFill = document.getElementById("sim-ticket-fill");
+              var clientsFill = document.getElementById("sim-clients-fill");
+              var elMonthly = document.getElementById("sim-monthly");
+              var el90days = document.getElementById("sim-90days");
+              var elAnnual = document.getElementById("sim-annual");
+
+              function fillPct(input) {
+                var min = parseFloat(input.min);
+                var max = parseFloat(input.max);
+                var val = parseFloat(input.value);
+                return (((val - min) / (max - min)) * 100).toFixed(4) + "%";
+              }
+
+              function update() {
+                var ticket = parseInt(ticketInput.value, 10);
+                var clients = parseInt(clientsInput.value, 10);
+                var monthly = ticket * clients;
+
+                ticketDisplay.textContent = currFmt.format(ticket);
+                clientsDisplay.textContent = clients;
+                ticketFill.style.width = fillPct(ticketInput);
+                clientsFill.style.width = fillPct(clientsInput);
+                /* only the numeric part — R$ symbol lives in the HTML span beside it */
+                elMonthly.textContent = numFmt.format(monthly);
+                el90days.textContent = numFmt.format(monthly * 3);
+                elAnnual.textContent = numFmt.format(monthly * 12);
+              }
+
+              ticketInput.addEventListener("input", update);
+              clientsInput.addEventListener("input", update);
+              update();
+            })();
+          </script>
+        </section>
+        <section id="pagos" class="px-6 py-20 md:py-28" data-aos="fade-up">
+          <div class="max-w-6xl mx-auto">
+            <span
+              class="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-4 block"
+              >Sistemas completos</span
+            >
+            <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">
+              Escale com sistemas completos
+            </h2>
+            <p class="text-muted-foreground font-body mb-12 max-w-xl">
+              Cada playbook é um sistema pronto. Copie, execute, fature.
+            </p>
+            <!-- NÍVEL 3 — CORE -->
+            <p
+              class="font-mono text-[10px] uppercase tracking-[0.2em] text-primary/60 mb-3"
+            >
+              NÍVEL 3 — CORE
+            </p>
+            <div class="mb-10 relative overflow-visible pt-4">
+              <div
+                class="relative rounded-lg border p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 flex flex-col border-primary bg-card shadow-[0_0_40px_hsl(82_100%_50%/0.1)] md:col-span-2 lg:col-span-3 md:p-10 ring-ultimate"
+              >
+                <span
+                  class="absolute -top-3 left-6 font-mono text-[10px] uppercase tracking-[0.2em] px-3 py-1 rounded-sm bg-primary text-primary-foreground"
+                  >SISTEMA COMPLETO</span
+                ><span
+                  class="absolute -top-3 right-6 font-mono text-[10px] uppercase tracking-[0.2em] px-3 py-1 rounded-sm bg-primary text-primary-foreground"
+                  >Mais escolhido</span
+                ><span
+                  class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2 block"
+                  >Sistema completo</span
+                >
+                <h3 class="font-heading font-bold mb-3 text-2xl md:text-3xl">
+                  Playbook Ultimate
+                </h3>
+                <p
+                  class="font-body text-sm text-muted-foreground mb-5 leading-relaxed flex-grow"
+                >
+                  O sistema completo. Claude + Lovable + n8n + Framework 4D
+                  integrados. Monetização, automação, construção de produto e
+                  escala: tudo num único playbook. Se você fosse escolher apenas
+                  um, é esse.
+                </p>
+                <ul class="mb-6 space-y-2">
+                  <li
+                    class="flex items-center gap-2 text-sm text-muted-foreground"
+                  >
+                    <span class="text-primary text-xs">▸</span>Claude: IA para
+                    copy, estratégia e decisão
+                  </li>
+                  <li
+                    class="flex items-center gap-2 text-sm text-muted-foreground"
+                  >
+                    <span class="text-primary text-xs">▸</span>Lovable: construa
+                    produtos sem código
+                  </li>
+                  <li
+                    class="flex items-center gap-2 text-sm text-muted-foreground"
+                  >
+                    <span class="text-primary text-xs">▸</span>n8n: automações
+                    que rodam sozinhas
+                  </li>
+                  <li
+                    class="flex items-center gap-2 text-sm text-muted-foreground"
+                  >
+                    <span class="text-primary text-xs">▸</span>Framework 4D:
+                    execução com método
+                  </li>
+                  <li
+                    class="flex items-center gap-2 text-sm text-muted-foreground"
+                  >
+                    <span class="text-primary text-xs">▸</span>Sistemas
+                    integrados de monetização
+                  </li>
+                  <li
+                    class="flex items-center gap-2 text-sm text-muted-foreground"
+                  >
+                    <span class="text-primary text-xs">▸</span>Suporte e
+                    atualizações contínuas
+                  </li>
+                </ul>
+                <div class="mb-5">
+                  <span class="text-sm text-muted-foreground line-through mr-2"
+                    >R$ 497</span
+                  ><span class="font-heading font-bold text-3xl text-primary"
+                    >R$ 127</span
+                  >
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                  <span
+                    class="font-mono text-[9px] uppercase tracking-[0.15em] px-2 py-0.5 rounded-sm border border-border text-muted-foreground"
+                    >Acesso imediato</span
+                  ><span
+                    class="font-mono text-[9px] uppercase tracking-[0.15em] px-2 py-0.5 rounded-sm border border-border text-muted-foreground"
+                    >Sem assinatura</span
+                  ><span
+                    class="font-mono text-[9px] uppercase tracking-[0.15em] px-2 py-0.5 rounded-sm border border-border text-muted-foreground"
+                    >Atualizações incluídas</span
+                  >
+                </div>
+                <p
+                  class="font-mono text-muted-foreground mb-4"
+                  style="font-size: 10px; opacity: 0.6"
+                >
+                  🔒 Garantia de 7 dias, reembolso sem perguntas
+                </p>
+                <a
+                  href="https://wa.me/5531996851564?text=QUERO+ULTIMATE+R127"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 min-h-[52px] md:min-h-0 bg-primary text-primary-foreground font-heading font-bold uppercase tracking-wider hover:bg-[hsl(82_100%_44%)] hover:scale-[1.02] active:scale-[0.98] h-11 rounded-md px-8 w-full py-6 text-base"
+                  >Quero o sistema completo</a
+                >
+              </div>
+            </div>
+            <!-- NOVO MATERIAL — MÉTODO DE FATURAMENTO -->
+            <div class="mb-10 relative overflow-visible pt-4">
+              <div
+                class="relative rounded-lg border p-6 md:p-10 transition-all duration-300 hover:-translate-y-1 flex flex-col border-primary bg-card shadow-[0_0_40px_hsl(82_100%_50%/0.1)] ring-ultimate"
+              >
+                <span
+                  class="absolute -top-3 left-6 font-mono text-[10px] uppercase tracking-[0.2em] px-3 py-1 rounded-sm bg-primary text-primary-foreground"
+                  >MÉTODO COMPLETO</span
+                >
+                <span
+                  class="absolute -top-3 right-6 font-mono text-[10px] uppercase tracking-[0.2em] px-3 py-1 rounded-sm bg-primary text-primary-foreground"
+                  >Novo</span
+                >
+                <span
+                  class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2 block"
+                  >Método de faturamento</span
+                >
+                <h3 class="font-heading font-bold mb-3 text-2xl md:text-3xl">
+                  Playbook — Do Zero ao Faturamento
+                </h3>
+                <p
+                  class="font-body text-sm text-muted-foreground mb-5 leading-relaxed flex-grow"
+                >
+                  O sistema completo: posicionamento, aquisição, conversão,
+                  entrega e escala. Cada etapa com passo a passo, scripts
+                  prontos, erros a evitar e ferramentas certas. Do zero ao
+                  primeiro cliente em 30 dias. Receita previsível em 90.
+                </p>
+                <ul class="mb-6 space-y-2">
+                  <li
+                    class="flex items-center gap-2 text-sm text-muted-foreground"
+                  >
+                    <span class="text-primary text-xs">▸</span>15 módulos do
+                    método completo
+                  </li>
+                  <li
+                    class="flex items-center gap-2 text-sm text-muted-foreground"
+                  >
+                    <span class="text-primary text-xs">▸</span>Scripts de vendas
+                    prontos por nicho
+                  </li>
+                  <li
+                    class="flex items-center gap-2 text-sm text-muted-foreground"
+                  >
+                    <span class="text-primary text-xs">▸</span>Framework de
+                    aquisição e conversão
+                  </li>
+                  <li
+                    class="flex items-center gap-2 text-sm text-muted-foreground"
+                  >
+                    <span class="text-primary text-xs">▸</span>Respostas para as
+                    5 objeções mais comuns
+                  </li>
+                  <li
+                    class="flex items-center gap-2 text-sm text-muted-foreground"
+                  >
+                    <span class="text-primary text-xs">▸</span>Rotina
+                    operacional semanal documentada
+                  </li>
+                  <li
+                    class="flex items-center gap-2 text-sm text-muted-foreground"
+                  >
+                    <span class="text-primary text-xs">▸</span>Estrutura de
+                    escala e previsibilidade
+                  </li>
+                </ul>
+                <div class="mb-5">
+                  <span class="text-sm text-muted-foreground line-through mr-2"
+                    >R$ 397</span
+                  >
+                  <span class="font-heading font-bold text-3xl text-primary"
+                    >R$ 127</span
+                  >
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                  <span
+                    class="font-mono text-[9px] uppercase tracking-[0.15em] px-2 py-0.5 rounded-sm border border-border text-muted-foreground"
+                    >Acesso imediato</span
+                  >
+                  <span
+                    class="font-mono text-[9px] uppercase tracking-[0.15em] px-2 py-0.5 rounded-sm border border-border text-muted-foreground"
+                    >Sem assinatura</span
+                  >
+                  <span
+                    class="font-mono text-[9px] uppercase tracking-[0.15em] px-2 py-0.5 rounded-sm border border-border text-muted-foreground"
+                    >15 módulos</span
+                  >
+                </div>
+                <p
+                  class="font-mono text-muted-foreground mb-4"
+                  style="font-size: 10px; opacity: 0.6"
+                >
+                  🔒 Garantia de 7 dias, reembolso sem perguntas
+                </p>
+                <a
+                  href="https://wa.me/5531996851564?text=QUERO+METODO+FATURAMENTO+R127"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 min-h-[52px] md:min-h-0 bg-primary text-primary-foreground font-heading font-bold uppercase tracking-wider hover:bg-[hsl(82_100%_44%)] hover:scale-[1.02] active:scale-[0.98] h-11 rounded-md px-8 w-full py-6 text-base"
+                  >Quero esse método</a
+                >
+              </div>
+            </div>
+
+            <!-- NÍVEL 2 — EXECUÇÃO -->
+            <p
+              class="font-mono text-[10px] uppercase tracking-[0.2em] text-primary/60 mb-3"
+            >
+              NÍVEL 2 — EXECUÇÃO
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div
+                class="relative rounded-lg border p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 flex flex-col border-border bg-card hover:border-primary/40"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <span
+                  class="absolute -top-3 left-6 font-mono text-[10px] uppercase tracking-[0.2em] px-3 py-1 rounded-sm bg-primary text-primary-foreground"
+                  >NOVO</span
+                ><span
+                  class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2 block"
+                  >Execução</span
+                >
+                <h3 class="font-heading font-bold mb-3 text-lg md:text-xl">
+                  Playbook de Vendas com IA
+                </h3>
+                <p
+                  class="font-body text-sm text-muted-foreground mb-5 leading-relaxed flex-grow"
+                >
+                  Automação de prospecção, qualificação e follow-up com
+                  inteligência artificial. Venda enquanto dorme.
+                </p>
+                <div class="mb-5">
+                  <span class="text-sm text-muted-foreground line-through mr-2"
+                    >R$ 397</span
+                  ><span class="font-heading font-bold text-2xl">R$ 64,69</span>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                  <span
+                    class="font-mono text-[9px] uppercase tracking-[0.15em] px-2 py-0.5 rounded-sm border border-border text-muted-foreground"
+                    >Acesso imediato</span
+                  ><span
+                    class="font-mono text-[9px] uppercase tracking-[0.15em] px-2 py-0.5 rounded-sm border border-border text-muted-foreground"
+                    >Sem assinatura</span
+                  >
+                </div>
+                <p
+                  class="font-mono text-muted-foreground mb-4"
+                  style="font-size: 10px; opacity: 0.6"
+                >
+                  🔒 Garantia de 7 dias, reembolso sem perguntas
+                </p>
+                <a
+                  href="https://wa.me/5531996851564?text=QUERO+VENDAS+IA+%2464%2C69"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 min-h-[52px] md:min-h-0 bg-primary text-primary-foreground font-heading font-bold uppercase tracking-wider hover:bg-[hsl(82_100%_44%)] hover:scale-[1.02] active:scale-[0.98] h-10 px-4 py-2 w-full"
+                  >Quero esse sistema</a
+                >
+              </div>
+              <div
+                class="relative rounded-lg border p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 flex flex-col border-border bg-card hover:border-primary/40"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <span
+                  class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2 block"
+                  >Avançado</span
+                >
+                <h3 class="font-heading font-bold mb-3 text-lg md:text-xl">
+                  Playbook de Lançamento
+                </h3>
+                <p
+                  class="font-body text-sm text-muted-foreground mb-5 leading-relaxed flex-grow"
+                >
+                  Do zero ao carrinho aberto. Estrutura completa de lançamento
+                  sem depender de guru.
+                </p>
+                <div class="mb-5">
+                  <span class="text-sm text-muted-foreground line-through mr-2"
+                    >R$ 397</span
+                  ><span class="font-heading font-bold text-2xl">R$ 64,69</span>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                  <span
+                    class="font-mono text-[9px] uppercase tracking-[0.15em] px-2 py-0.5 rounded-sm border border-border text-muted-foreground"
+                    >Acesso imediato</span
+                  >
+                </div>
+                <p
+                  class="font-mono text-muted-foreground mb-4"
+                  style="font-size: 10px; opacity: 0.6"
+                >
+                  🔒 Garantia de 7 dias, reembolso sem perguntas
+                </p>
+                <a
+                  href="https://wa.me/5531996851564?text=QUERO+LAN%C3%87AMENTO+%2464%2C69"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 min-h-[52px] md:min-h-0 bg-primary text-primary-foreground font-heading font-bold uppercase tracking-wider hover:bg-[hsl(82_100%_44%)] hover:scale-[1.02] active:scale-[0.98] h-10 px-4 py-2 w-full"
+                  >Quero esse sistema</a
+                >
+              </div>
+              <div
+                class="relative rounded-lg border p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 flex flex-col border-border bg-card hover:border-primary/40"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <span
+                  class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2 block"
+                  >Base</span
+                >
+                <h3 class="font-heading font-bold mb-3 text-lg md:text-xl">
+                  Playbook Definitivo de Tráfego
+                </h3>
+                <p
+                  class="font-body text-sm text-muted-foreground mb-5 leading-relaxed flex-grow"
+                >
+                  Escala real. Campanhas avançadas, criativos que convertem e
+                  métricas que importam.
+                </p>
+                <div class="mb-5">
+                  <span class="text-sm text-muted-foreground line-through mr-2"
+                    >R$ 397</span
+                  ><span class="font-heading font-bold text-2xl">R$ 64,69</span>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                  <span
+                    class="font-mono text-[9px] uppercase tracking-[0.15em] px-2 py-0.5 rounded-sm border border-border text-muted-foreground"
+                    >Atualizações incluídas</span
+                  >
+                </div>
+                <p
+                  class="font-mono text-muted-foreground mb-4"
+                  style="font-size: 10px; opacity: 0.6"
+                >
+                  🔒 Garantia de 7 dias, reembolso sem perguntas
+                </p>
+                <a
+                  href="https://wa.me/5531996851564?text=QUERO+TRAFEGO+%2464%2C69"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 min-h-[52px] md:min-h-0 bg-primary text-primary-foreground font-heading font-bold uppercase tracking-wider hover:bg-[hsl(82_100%_44%)] hover:scale-[1.02] active:scale-[0.98] h-10 px-4 py-2 w-full"
+                  >Quero esse sistema</a
+                >
+              </div>
+              <div
+                class="relative rounded-lg border p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 flex flex-col border-border bg-card hover:border-primary/40"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <span
+                  class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2 block"
+                  >Base</span
+                >
+                <h3 class="font-heading font-bold mb-3 text-lg md:text-xl">
+                  Playbook Definitivo de Agências
+                </h3>
+                <p
+                  class="font-body text-sm text-muted-foreground mb-5 leading-relaxed flex-grow"
+                >
+                  Monte uma agência que fatura 6 dígitos. Processos, contratos,
+                  precificação e escala.
+                </p>
+                <div class="mb-5">
+                  <span class="text-sm text-muted-foreground line-through mr-2"
+                    >R$ 397</span
+                  ><span class="font-heading font-bold text-2xl">R$ 64,69</span>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                  <span
+                    class="font-mono text-[9px] uppercase tracking-[0.15em] px-2 py-0.5 rounded-sm border border-border text-muted-foreground"
+                    >Acesso imediato</span
+                  >
+                </div>
+                <p
+                  class="font-mono text-muted-foreground mb-4"
+                  style="font-size: 10px; opacity: 0.6"
+                >
+                  🔒 Garantia de 7 dias, reembolso sem perguntas
+                </p>
+                <a
+                  href="https://wa.me/5531996851564?text=QUERO+AG%C3%8ANCIA+%2464%2C69"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 min-h-[52px] md:min-h-0 bg-primary text-primary-foreground font-heading font-bold uppercase tracking-wider hover:bg-[hsl(82_100%_44%)] hover:scale-[1.02] active:scale-[0.98] h-10 px-4 py-2 w-full"
+                  >Quero esse sistema</a
+                >
+              </div>
+              <div
+                class="relative rounded-lg border p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 flex flex-col border-border bg-card hover:border-primary/40"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <span
+                  class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2 block"
+                  >Base</span
+                >
+                <h3 class="font-heading font-bold mb-3 text-lg md:text-xl">
+                  Playbook Definitivo de Vendas
+                </h3>
+                <p
+                  class="font-body text-sm text-muted-foreground mb-5 leading-relaxed flex-grow"
+                >
+                  Pipeline, CRM, scripts avançados e métricas. O sistema
+                  completo de vendas B2B e B2C.
+                </p>
+                <div class="mb-5">
+                  <span class="text-sm text-muted-foreground line-through mr-2"
+                    >R$ 397</span
+                  ><span class="font-heading font-bold text-2xl">R$ 64,69</span>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-5">
+                  <span
+                    class="font-mono text-[9px] uppercase tracking-[0.15em] px-2 py-0.5 rounded-sm border border-border text-muted-foreground"
+                    >Sem assinatura</span
+                  >
+                </div>
+                <p
+                  class="font-mono text-muted-foreground mb-4"
+                  style="font-size: 10px; opacity: 0.6"
+                >
+                  🔒 Garantia de 7 dias, reembolso sem perguntas
+                </p>
+                <a
+                  href="https://wa.me/5531996851564?text=QUERO+VENDAS+%2464%2C69"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 min-h-[52px] md:min-h-0 bg-primary text-primary-foreground font-heading font-bold uppercase tracking-wider hover:bg-[hsl(82_100%_44%)] hover:scale-[1.02] active:scale-[0.98] h-10 px-4 py-2 w-full"
+                  >Quero esse sistema</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ══════════════ TRILHA DE APRENDIZADO ══════════════ -->
+        <section
+          class="px-6 py-20 md:py-28 bg-[hsl(0_0%_4%)]"
+          data-aos="fade-up"
+        >
+          <style>
+            /* ── Trilha overflow / word-break fixes ─── */
+            .trilha-card {
+              box-sizing: border-box;
+              width: 100%;
+              overflow: hidden;
+              padding: 20px 24px;
+            }
+            .trilha-card .flex {
+              min-width: 0;
+              flex-wrap: nowrap;
+              align-items: flex-start;
+              gap: 12px;
+            }
+            .trilha-card .flex > div {
+              min-width: 0;
+              flex: 1 1 0;
+              overflow-wrap: break-word;
+              word-break: break-word;
+            }
+            .trilha-step-body p,
+            .trilha-step-body ul,
+            .trilha-step-body li {
+              overflow-wrap: break-word;
+              word-break: break-word;
+              max-width: 100%;
+            }
+            .trilha-card h3 {
+              white-space: normal;
+              overflow-wrap: break-word;
+              word-break: break-word;
+            }
+            /* ── Trilha accordion ────────────────────── */
+            .trilha-step-body {
+              display: none;
+              overflow: hidden;
+            }
+            .trilha-step-body.open {
+              display: block;
+              animation: trilha-open 0.35s ease-out;
+            }
+            @keyframes trilha-open {
+              from {
+                opacity: 0;
+                transform: translateY(-8px);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+            .trilha-card {
+              cursor: pointer;
+              user-select: none;
+              transition:
+                border-color 0.25s ease,
+                box-shadow 0.25s ease,
+                transform 0.18s ease;
+            }
+            .trilha-card:hover {
+              border-color: hsl(82 100% 50% / 0.5);
+              transform: translateX(4px);
+            }
+            .trilha-card.open {
+              border-color: hsl(82 100% 50% / 0.5);
+              box-shadow: 0 0 20px hsl(82 100% 50% / 0.06);
+            }
+            .trilha-chevron {
+              display: inline-block;
+              transition: transform 0.28s ease;
+              font-size: 12px;
+              opacity: 0.6;
+              margin-left: 6px;
+            }
+            .trilha-card.open .trilha-chevron {
+              transform: rotate(90deg);
+              opacity: 1;
+            }
+          </style>
+          <div class="max-w-4xl mx-auto">
+            <span
+              class="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-4 block"
+              >Jornada do cliente</span
+            >
+            <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">
+              Trilha de Aprendizado
+            </h2>
+            <p class="text-muted-foreground font-body mb-12 max-w-xl">
+              Clique em cada etapa e veja o que você ganha. Cada passo te leva
+              mais perto de um sistema de receita previsível.
+            </p>
+            <div class="relative">
+              <div
+                class="hidden md:block absolute left-[17px] top-2 bottom-2 w-px bg-primary/20"
+              ></div>
+              <div class="space-y-4">
+                <!-- Step 1 -->
+                <div class="flex gap-5 items-start" data-aos="fade-up">
+                  <div
+                    class="flex-shrink-0 w-9 h-9 rounded-full border-2 border-primary/40 bg-[hsl(0_0%_7%)] flex items-center justify-center font-mono text-xs text-primary font-bold z-10 mt-1"
+                  >
+                    1
+                  </div>
+                  <div
+                    class="trilha-card rounded-lg border border-border bg-card p-5 flex-1"
+                    data-trilha="1"
+                  >
+                    <div class="flex items-start justify-between gap-2">
+                      <div>
+                        <span
+                          class="font-mono text-[10px] uppercase tracking-[0.2em] text-primary mb-1 block"
+                          >Desbloqueio</span
+                        >
+                        <h3 class="font-heading font-bold text-base mb-1">
+                          Playbooks Gratuitos
+                          <span class="trilha-chevron">▶</span>
+                        </h3>
+                      </div>
+                      <span
+                        class="font-mono text-[9px] uppercase tracking-[0.15em] px-2 py-1 rounded-sm bg-muted text-muted-foreground flex-shrink-0"
+                        >Grátis</span
+                      >
+                    </div>
+                    <p
+                      class="font-body text-sm text-muted-foreground mt-1 mb-2"
+                    >
+                      Você para de consumir conteúdo aleatório e entende o
+                      básico
+                    </p>
+                    <span class="font-mono text-sm text-primary font-semibold"
+                      >→ "Você sai da confusão"</span
+                    >
+                    <div
+                      class="trilha-step-body mt-4 pt-4 border-t border-border/50"
+                    >
+                      <ul
+                        class="space-y-2 text-sm text-muted-foreground font-body"
+                      >
+                        <li class="flex gap-2">
+                          <span class="text-primary text-xs mt-0.5">▸</span
+                          >Playbook de Tráfego: primeiras campanhas sem queimar
+                          dinheiro
+                        </li>
+                        <li class="flex gap-2">
+                          <span class="text-primary text-xs mt-0.5">▸</span
+                          >Playbook de Agências: estruture sua operação do zero
+                        </li>
+                        <li class="flex gap-2">
+                          <span class="text-primary text-xs mt-0.5">▸</span
+                          >Playbook de Vendas: scripts e frameworks para fechar
+                          mais
+                        </li>
+                      </ul>
+                      <p class="font-mono text-xs text-primary/60 mt-3">
+                        Acesso via WhatsApp · 100% gratuito · sem cartão
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div
+                  class="flex gap-5 items-start"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div
+                    class="flex-shrink-0 w-9 h-9 rounded-full border-2 border-primary/40 bg-[hsl(0_0%_7%)] flex items-center justify-center font-mono text-xs text-primary font-bold z-10 mt-1"
+                  >
+                    2
+                  </div>
+                  <div
+                    class="trilha-card rounded-lg border border-border bg-card p-5 flex-1"
+                    data-trilha="2"
+                  >
+                    <div class="flex items-start justify-between gap-2">
+                      <div>
+                        <span
+                          class="font-mono text-[10px] uppercase tracking-[0.2em] text-primary mb-1 block"
+                          >Primeira Execução</span
+                        >
+                        <h3 class="font-heading font-bold text-base mb-1">
+                          Playbook Individual — R$64,69
+                          <span class="trilha-chevron">▶</span>
+                        </h3>
+                      </div>
+                      <span
+                        class="font-mono text-[9px] uppercase tracking-[0.15em] px-2 py-1 rounded-sm bg-muted text-muted-foreground flex-shrink-0"
+                        >Nível 2</span
+                      >
+                    </div>
+                    <p
+                      class="font-body text-sm text-muted-foreground mt-1 mb-2"
+                    >
+                      Você aplica um sistema completo pela primeira vez e sai da
+                      teoria
+                    </p>
+                    <span class="font-mono text-sm text-primary font-semibold"
+                      >→ "Você começa a agir"</span
+                    >
+                    <div
+                      class="trilha-step-body mt-4 pt-4 border-t border-border/50"
+                    >
+                      <ul
+                        class="space-y-2 text-sm text-muted-foreground font-body"
+                      >
+                        <li class="flex gap-2">
+                          <span class="text-primary text-xs mt-0.5">▸</span
+                          >Escolha o Playbook mais alinhado ao seu perfil e
+                          objetivo
+                        </li>
+                        <li class="flex gap-2">
+                          <span class="text-primary text-xs mt-0.5">▸</span
+                          >Passo a passo detalhado com ações concretas em cada
+                          etapa
+                        </li>
+                        <li class="flex gap-2">
+                          <span class="text-primary text-xs mt-0.5">▸</span
+                          >Framework de execução com IA para acelerar resultados
+                        </li>
+                      </ul>
+                      <p class="font-mono text-xs text-primary/60 mt-3">
+                        Acesso imediato · sem assinatura · 7 dias de garantia
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div
+                  class="flex gap-5 items-start"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <div
+                    class="flex-shrink-0 w-9 h-9 rounded-full border-2 border-primary/40 bg-[hsl(0_0%_7%)] flex items-center justify-center font-mono text-xs text-primary font-bold z-10 mt-1"
+                  >
+                    3
+                  </div>
+                  <div
+                    class="trilha-card rounded-lg border border-border bg-card p-5 flex-1"
+                    data-trilha="3"
+                  >
+                    <div class="flex items-start justify-between gap-2">
+                      <div>
+                        <span
+                          class="font-mono text-[10px] uppercase tracking-[0.2em] text-primary mb-1 block"
+                          >Primeira Venda</span
+                        >
+                        <h3 class="font-heading font-bold text-base mb-1">
+                          Combo Iniciante — R$127
+                          <span class="trilha-chevron">▶</span>
+                        </h3>
+                      </div>
+                      <span
+                        class="font-mono text-[9px] uppercase tracking-[0.15em] px-2 py-1 rounded-sm bg-muted text-muted-foreground flex-shrink-0"
+                        >Combo 1</span
+                      >
+                    </div>
+                    <p
+                      class="font-body text-sm text-muted-foreground mt-1 mb-2"
+                    >
+                      Você segue um processo estruturado e fecha sua primeira
+                      venda com IA
+                    </p>
+                    <span class="font-mono text-sm text-primary font-semibold"
+                      >→ "Você prova que funciona"</span
+                    >
+                    <div
+                      class="trilha-step-body mt-4 pt-4 border-t border-border/50"
+                    >
+                      <ul
+                        class="space-y-2 text-sm text-muted-foreground font-body"
+                      >
+                        <li class="flex gap-2">
+                          <span class="text-primary text-xs mt-0.5">▸</span
+                          >Fundação com IA: o ponto de partida certo para gerar
+                          renda
+                        </li>
+                        <li class="flex gap-2">
+                          <span class="text-primary text-xs mt-0.5">▸</span>1
+                          Playbook à sua escolha para executar imediatamente
+                        </li>
+                        <li class="flex gap-2">
+                          <span class="text-primary text-xs mt-0.5">▸</span
+                          >Menor risco possível com alto valor desde o primeiro
+                          dia
+                        </li>
+                      </ul>
+                      <p class="font-mono text-xs text-primary/60 mt-3">
+                        Combinado estratégico · acesso imediato a tudo
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div
+                  class="flex gap-5 items-start"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  <div
+                    class="flex-shrink-0 w-9 h-9 rounded-full border-2 border-primary/40 bg-[hsl(0_0%_7%)] flex items-center justify-center font-mono text-xs text-primary font-bold z-10 mt-1"
+                  >
+                    4
+                  </div>
+                  <div
+                    class="trilha-card rounded-lg border border-border bg-card p-5 flex-1"
+                    data-trilha="4"
+                  >
+                    <div class="flex items-start justify-between gap-2">
+                      <div>
+                        <span
+                          class="font-mono text-[10px] uppercase tracking-[0.2em] text-primary mb-1 block"
+                          >Consolidação</span
+                        >
+                        <h3 class="font-heading font-bold text-base mb-1">
+                          Playbook Ultimate — R$127
+                          <span class="trilha-chevron">▶</span>
+                        </h3>
+                      </div>
+                      <span
+                        class="font-mono text-[9px] uppercase tracking-[0.15em] px-2 py-1 rounded-sm bg-muted text-muted-foreground flex-shrink-0"
+                        >Nível 3</span
+                      >
+                    </div>
+                    <p
+                      class="font-body text-sm text-muted-foreground mt-1 mb-2"
+                    >
+                      Você organiza tudo num sistema previsível com Claude,
+                      Lovable e n8n
+                    </p>
+                    <span class="font-mono text-sm text-primary font-semibold"
+                      >→ "Você constrói um sistema"</span
+                    >
+                    <div
+                      class="trilha-step-body mt-4 pt-4 border-t border-border/50"
+                    >
+                      <ul
+                        class="space-y-2 text-sm text-muted-foreground font-body"
+                      >
+                        <li class="flex gap-2">
+                          <span class="text-primary text-xs mt-0.5">▸</span
+                          >Claude: IA para copy, estratégia e decisão
+                        </li>
+                        <li class="flex gap-2">
+                          <span class="text-primary text-xs mt-0.5">▸</span
+                          >Lovable: construa produtos digitais sem escrever
+                          código
+                        </li>
+                        <li class="flex gap-2">
+                          <span class="text-primary text-xs mt-0.5">▸</span>n8n:
+                          automações que trabalham por você 24h
+                        </li>
+                        <li class="flex gap-2">
+                          <span class="text-primary text-xs mt-0.5">▸</span
+                          >Framework 4D: método de execução com resultado
+                        </li>
+                      </ul>
+                      <p class="font-mono text-xs text-primary/60 mt-3">
+                        O mais escolhido · atualizações inclusas · 7 dias de
+                        garantia
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div
+                  class="flex gap-5 items-start"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
+                  <div
+                    class="flex-shrink-0 w-9 h-9 rounded-full border-2 border-primary bg-[hsl(0_0%_7%)] flex items-center justify-center font-mono text-xs text-primary font-bold z-10 mt-1"
+                  >
+                    5
+                  </div>
+                  <div
+                    class="trilha-card rounded-lg border border-primary/40 bg-card p-5 flex-1 shadow-[0_0_20px_hsl(82_100%_50%/0.07)]"
+                    data-trilha="5"
+                  >
+                    <div class="flex items-start justify-between gap-2">
+                      <div>
+                        <span
+                          class="font-mono text-[10px] uppercase tracking-[0.2em] text-primary mb-1 block"
+                          >Escala</span
+                        >
+                        <h3 class="font-heading font-bold text-base mb-1">
+                          Combo Completo — R$267
+                          <span class="trilha-chevron">▶</span>
+                        </h3>
+                      </div>
+                      <span
+                        class="font-mono text-[9px] uppercase tracking-[0.15em] px-2 py-1 rounded-sm bg-primary text-primary-foreground flex-shrink-0"
+                        >Melhor oferta</span
+                      >
+                    </div>
+                    <p
+                      class="font-body text-sm text-muted-foreground mt-1 mb-2"
+                    >
+                      Você integra estratégias de tráfego, vendas, agência e
+                      automação e começa a escalar
+                    </p>
+                    <span class="font-mono text-sm text-primary font-semibold"
+                      >→ "Você começa a escalar"</span
+                    >
+                    <div
+                      class="trilha-step-body mt-4 pt-4 border-t border-border/50"
+                    >
+                      <ul
+                        class="space-y-2 text-sm text-muted-foreground font-body"
+                      >
+                        <li class="flex gap-2">
+                          <span class="text-primary text-xs mt-0.5">▸</span
+                          >Todos os Playbooks individuais: 5 sistemas completos
+                        </li>
+                        <li class="flex gap-2">
+                          <span class="text-primary text-xs mt-0.5">▸</span
+                          >Playbook Ultimate: o sistema de automação e
+                          monetização
+                        </li>
+                        <li class="flex gap-2">
+                          <span class="text-primary text-xs mt-0.5">▸</span
+                          >Economia de R$246,60 em relação à compra individual
+                        </li>
+                        <li class="flex gap-2">
+                          <span class="text-primary text-xs mt-0.5">▸</span
+                          >Acesso imediato a tudo, sem assinatura
+                        </li>
+                      </ul>
+                      <p class="font-mono text-xs text-primary/60 mt-3">
+                        Acesso vitalício · sistema completo de escala
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p
+              class="font-heading text-xl md:text-2xl font-bold text-center mt-14 text-primary"
+            >
+              Escolha sua trilha e comece hoje mesmo.
+            </p>
+          </div>
+          <script>
+            (function () {
+              document
+                .querySelectorAll(".trilha-card")
+                .forEach(function (card) {
+                  card.addEventListener("click", function () {
+                    var body = card.querySelector(".trilha-step-body");
+                    if (!body) return;
+                    var isOpen = body.classList.contains("open");
+                    // fecha todos
+                    document
+                      .querySelectorAll(".trilha-step-body.open")
+                      .forEach(function (b) {
+                        b.classList.remove("open");
+                        b.closest(".trilha-card").classList.remove("open");
+                      });
+                    // abre o clicado se estava fechado
+                    if (!isOpen) {
+                      body.classList.add("open");
+                      card.classList.add("open");
+                    }
+                  });
+                });
+            })();
+          </script>
+        </section>
+
+        <!-- ══════════════ COMBOS ══════════════ -->
+        <section id="combos" class="px-6 py-20 md:py-28" data-aos="fade-up">
+          <div class="max-w-6xl mx-auto">
+            <span
+              class="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-4 block"
+              >Ofertas estratégicas</span
+            >
+            <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">
+              Combos — Mais por muito menos
+            </h2>
+            <p class="text-muted-foreground font-body mb-12 max-w-xl">
+              Quanto mais você quer escalar, mais faz sentido ir completo.
+              Parcele em até 12x.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <!-- COMBO INICIANTE -->
+              <div
+                class="relative rounded-lg border p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 flex flex-col border-border bg-card hover:border-primary/40"
+                data-aos="fade-up"
+              >
+                <span
+                  class="absolute -top-3 left-6 font-mono text-[10px] uppercase tracking-[0.2em] px-3 py-1 rounded-sm bg-muted text-muted-foreground"
+                  >COMBO INICIANTE</span
+                >
+                <span
+                  class="font-mono text-[10px] uppercase tracking-[0.2em] text-primary/70 mt-3 mb-1 block"
+                  >Primeiro sistema funcionando</span
+                >
+                <h3 class="font-heading font-bold mb-2 text-xl">
+                  Vendas com IA + Playbook do Zero ao Faturamento
+                </h3>
+                <p
+                  class="font-body text-sm text-muted-foreground mb-5 flex-grow"
+                >
+                  Para quem está começando. Você aprende a vender com IA e
+                  executa o método completo do primeiro cliente ao faturamento
+                  consistente.
+                </p>
+                <div class="mb-2">
+                  <span class="text-sm text-muted-foreground line-through mr-2"
+                    >R$ 191,90</span
+                  >
+                  <span class="font-heading font-bold text-3xl text-primary"
+                    >R$ 127</span
+                  >
+                </div>
+                <p class="font-mono text-xs text-primary/60 mb-5">
+                  ou 12x de R$ 12,70
+                </p>
+                <ul class="mb-5 space-y-2 text-sm text-muted-foreground">
+                  <li class="flex items-start gap-2">
+                    <span class="text-primary text-xs mt-0.5">▸</span>Vendas com
+                    IA: automação de prospecção e fechamento
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-primary text-xs mt-0.5">▸</span>Playbook
+                    Do Zero ao Faturamento: método em 15 módulos
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-primary text-xs mt-0.5">▸</span>Você poupa
+                    R$ 64,90. Acesso imediato
+                  </li>
+                </ul>
+                <p
+                  class="font-mono text-muted-foreground mb-4"
+                  style="font-size: 10px; opacity: 0.6"
+                >
+                  🔒 Garantia de 7 dias, reembolso sem perguntas
+                </p>
+                <a
+                  href="https://wa.me/5531996851564?text=Quero+o+Combo+Iniciante+por+R%24127"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 min-h-[52px] md:min-h-0 border-2 border-primary text-primary font-heading font-bold uppercase tracking-wider hover:bg-primary hover:text-primary-foreground hover:scale-[1.02] active:scale-[0.98] h-11 rounded-md px-6 w-full py-4 text-sm"
+                  >Quero o Combo Iniciante →</a
+                >
+              </div>
+
+              <!-- COMBO ESCALA -->
+              <div
+                class="relative rounded-lg border p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 flex flex-col border-border bg-card hover:border-primary/40"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <span
+                  class="absolute -top-3 left-6 font-mono text-[10px] uppercase tracking-[0.2em] px-3 py-1 rounded-sm bg-muted text-muted-foreground"
+                  >COMBO ESCALA</span
+                >
+                <span
+                  class="absolute -top-3 right-6 font-mono text-[10px] uppercase tracking-[0.2em] px-3 py-1 rounded-sm bg-primary text-primary-foreground"
+                  >RECOMENDADO</span
+                >
+                <span
+                  class="font-mono text-[10px] uppercase tracking-[0.2em] text-primary/70 mt-3 mb-1 block"
+                  >Operação completa com IA</span
+                >
+                <h3 class="font-heading font-bold mb-2 text-xl">
+                  Agências + Tráfego + Lançamento + Ultimate
+                </h3>
+                <p
+                  class="font-body text-sm text-muted-foreground mb-5 flex-grow"
+                >
+                  Para quem quer operar em múltiplas frentes. Quatro sistemas
+                  integrados: agência, tráfego pago, lançamento digital e
+                  automação total.
+                </p>
+                <div class="mb-2">
+                  <span class="text-sm text-muted-foreground line-through mr-2"
+                    >R$ 321,70</span
+                  >
+                  <span class="font-heading font-bold text-3xl text-primary"
+                    >R$ 197</span
+                  >
+                </div>
+                <p class="font-mono text-xs text-primary/60 mb-5">
+                  ou 12x de R$ 19,70
+                </p>
+                <ul class="mb-5 space-y-2 text-sm text-muted-foreground">
+                  <li class="flex items-start gap-2">
+                    <span class="text-primary text-xs mt-0.5">▸</span>Agências
+                    com IA: estrutura e escala de agência
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-primary text-xs mt-0.5">▸</span>Tráfego
+                    com IA: campanhas que convertem
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-primary text-xs mt-0.5">▸</span>Lançamento
+                    com IA: do zero ao carrinho aberto
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-primary text-xs mt-0.5">▸</span>Playbook
+                    Ultimate: Claude + Lovable + n8n + Framework 4D
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-primary text-xs mt-0.5">▸</span>Você poupa
+                    R$ 124,70
+                  </li>
+                </ul>
+                <p
+                  class="font-mono text-muted-foreground mb-4"
+                  style="font-size: 10px; opacity: 0.6"
+                >
+                  🔒 Garantia de 7 dias, reembolso sem perguntas
+                </p>
+                <a
+                  href="https://wa.me/5531996851564?text=Quero+o+Combo+Escala+por+R%24197"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 min-h-[52px] md:min-h-0 border-2 border-primary text-primary font-heading font-bold uppercase tracking-wider hover:bg-primary hover:text-primary-foreground hover:scale-[1.02] active:scale-[0.98] h-11 rounded-md px-6 w-full py-4 text-sm"
+                  >Quero o Combo Escala →</a
+                >
+              </div>
+
+              <!-- COMBO COMPLETO — DESTAQUE -->
+              <div
+                class="relative rounded-lg border p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 flex flex-col border-primary bg-card shadow-[0_0_40px_hsl(82_100%_50%/0.12)] ring-ultimate"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <span
+                  class="absolute -top-3 left-6 font-mono text-[10px] uppercase tracking-[0.2em] px-3 py-1 rounded-sm bg-primary text-primary-foreground"
+                  >MELHOR OFERTA</span
+                >
+                <span
+                  class="absolute -top-3 right-6 font-mono text-[10px] uppercase tracking-[0.2em] px-3 py-1 rounded-sm bg-primary text-primary-foreground"
+                  >COMPLETO</span
+                >
+                <span
+                  class="font-mono text-[10px] uppercase tracking-[0.2em] text-primary/70 mt-3 mb-1 block"
+                  >Todos os 6 materiais</span
+                >
+                <h3 class="font-heading font-bold mb-2 text-xl">
+                  Combo Completo — Sistema Total
+                </h3>
+                <p
+                  class="font-body text-sm text-muted-foreground mb-5 flex-grow"
+                >
+                  Todos os materiais. Todos os sistemas. Tudo para ir do zero à
+                  escala com IA, sem pular nenhum passo, sem precisar comprar
+                  nada separado.
+                </p>
+                <div class="mb-2">
+                  <span class="text-sm text-muted-foreground line-through mr-2"
+                    >R$ 513,60</span
+                  >
+                  <span class="font-heading font-bold text-4xl text-primary"
+                    >R$ 267</span
+                  >
+                </div>
+                <p class="font-mono text-xs text-primary/60 mb-5">
+                  ou 12x de R$ 26,70
+                </p>
+                <ul class="mb-5 space-y-2 text-sm text-muted-foreground">
+                  <li class="flex items-start gap-2">
+                    <span class="text-primary text-xs mt-0.5">▸</span>Playbook
+                    Ultimate (R$ 127)
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-primary text-xs mt-0.5">▸</span>Playbook
+                    Do Zero ao Faturamento (R$ 127)
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-primary text-xs mt-0.5">▸</span>Agências
+                    com IA · Tráfego com IA · Vendas com IA · Lançamento com IA
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-primary font-bold text-xs mt-0.5">▸</span
+                    ><strong
+                      >Você poupa R$ 246,60 — acesso imediato a tudo</strong
+                    >
+                  </li>
+                </ul>
+                <p
+                  class="font-mono text-muted-foreground mb-4"
+                  style="font-size: 10px; opacity: 0.6"
+                >
+                  🔒 Garantia de 7 dias, reembolso sem perguntas
+                </p>
+                <a
+                  href="https://wa.me/5531996851564?text=Quero+o+Combo+Completo+por+R%24267"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 min-h-[52px] md:min-h-0 bg-primary text-primary-foreground font-heading font-bold uppercase tracking-wider hover:bg-[hsl(82_100%_44%)] hover:scale-[1.02] active:scale-[0.98] h-11 rounded-md px-6 w-full py-6 text-sm"
+                  >Quero o Combo Completo →</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════ DEPOIMENTOS ══════════════ -->
+        <section
+          class="px-6 py-20 md:py-28 bg-[hsl(0_0%_4%)]"
+          data-aos="fade-up"
+        >
+          <div class="max-w-6xl mx-auto">
+            <span
+              class="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-4 block"
+              >Quem já executou</span
+            >
+            <h2 class="font-heading text-3xl md:text-4xl font-bold mb-12">
+              Resultados de quem saiu da teoria e começou a executar
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div
+                class="rounded-lg border border-border bg-card p-6 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
+                data-aos="fade-up"
+              >
+                <div class="flex gap-1 mb-4">
+                  <span style="color: #ffbd2e; font-size: 14px">★★★★★</span>
+                </div>
+                <p
+                  class="font-body text-sm text-muted-foreground leading-relaxed mb-4"
+                >
+                  "Comprei o Playbook de Vendas com IA numa sexta. Na semana
+                  seguinte fechei meu primeiro cliente de R$1.800. O sistema de
+                  prospecção automatizada funcionou do primeiro dia."
+                </p>
+                <div class="border-t border-border/50 pt-3 mt-auto">
+                  <p class="font-heading font-bold text-sm">Rafael M.</p>
+                  <p class="font-mono text-xs text-primary/70">
+                    Consultor · São Paulo, SP
+                  </p>
+                  <p class="font-mono text-xs text-muted-foreground mt-1">
+                    +R$ 1.800 em 5 dias
+                  </p>
+                </div>
+              </div>
+              <div
+                class="rounded-lg border border-border bg-card p-6 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div class="flex gap-1 mb-4">
+                  <span style="color: #ffbd2e; font-size: 14px">★★★★★</span>
+                </div>
+                <p
+                  class="font-body text-sm text-muted-foreground leading-relaxed mb-4"
+                >
+                  "Tinha tentado abrir agência duas vezes antes. Com o Playbook
+                  de Agências com IA entendi onde eu errava na precificação e na
+                  prospecção. Hoje tenho 5 clientes fixos."
+                </p>
+                <div class="border-t border-border/50 pt-3 mt-auto">
+                  <p class="font-heading font-bold text-sm">Camila A.</p>
+                  <p class="font-mono text-xs text-primary/70">
+                    Dona de agência · Recife, PE
+                  </p>
+                  <p class="font-mono text-xs text-muted-foreground mt-1">
+                    5 clientes em 30 dias
+                  </p>
+                </div>
+              </div>
+              <div
+                class="rounded-lg border border-border bg-card p-6 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div class="flex gap-1 mb-4">
+                  <span style="color: #ffbd2e; font-size: 14px">★★★★★</span>
+                </div>
+                <p
+                  class="font-body text-sm text-muted-foreground leading-relaxed mb-4"
+                >
+                  "Fiz o lançamento seguindo o playbook exato. Produto digital,
+                  R$ 97 o ingresso. Faturei R$ 4.200 no primeiro fim de semana.
+                  Nunca tinha lançado nada antes."
+                </p>
+                <div class="border-t border-border/50 pt-3 mt-auto">
+                  <p class="font-heading font-bold text-sm">Diego F.</p>
+                  <p class="font-mono text-xs text-primary/70">
+                    Infoprodutor · Belo Horizonte, MG
+                  </p>
+                  <p class="font-mono text-xs text-muted-foreground mt-1">
+                    +R$ 4.200 no primeiro lançamento
+                  </p>
+                </div>
+              </div>
+              <div
+                class="rounded-lg border border-border bg-card p-6 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <div class="flex gap-1 mb-4">
+                  <span style="color: #ffbd2e; font-size: 14px">★★★★★</span>
+                </div>
+                <p
+                  class="font-body text-sm text-muted-foreground leading-relaxed mb-4"
+                >
+                  "Comprei o Combo Completo num impulso. Em 3 meses montei um
+                  funil de tráfego + vendas automatizadas. Faturamento mensal
+                  saiu de R$ 1.200 para R$ 8.700."
+                </p>
+                <div class="border-t border-border/50 pt-3 mt-auto">
+                  <p class="font-heading font-bold text-sm">Patrícia L.</p>
+                  <p class="font-mono text-xs text-primary/70">
+                    Freelancer · Curitiba, PR
+                  </p>
+                  <p class="font-mono text-xs text-muted-foreground mt-1">
+                    Crescimento 7x em 90 dias
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════ RESULTADOS REAIS ══════════════ -->
+        <section class="px-6 py-20 md:py-28" data-aos="fade-up">
+          <div class="max-w-6xl mx-auto">
+            <span
+              class="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-4 block"
+              >Não é promessa — é dado</span
+            >
+            <h2 class="font-heading text-3xl md:text-4xl font-bold mb-12">
+              Resultados reais
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div
+                class="rounded-lg border border-border bg-card p-6 text-center hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
+              >
+                <span
+                  class="font-heading text-3xl md:text-4xl font-extrabold text-primary block mb-1"
+                  >+R$ 3.500</span
+                ><span
+                  class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground block mb-3"
+                  >em 30 dias</span
+                >
+                <p class="font-body text-sm text-muted-foreground">
+                  Usando o Playbook de Vendas com IA
+                </p>
+                <span
+                  class="font-mono text-primary mt-2 block"
+                  style="font-size: 10px; opacity: 0.6"
+                  >● Aluno verificado · São Paulo, SP</span
+                >
+              </div>
+              <div
+                class="rounded-lg border border-border bg-card p-6 text-center hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
+              >
+                <span
+                  class="font-heading text-3xl md:text-4xl font-extrabold text-primary block mb-1"
+                  >+R$ 4.800</span
+                ><span
+                  class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground block mb-3"
+                  >primeira semana</span
+                >
+                <p class="font-body text-sm text-muted-foreground">
+                  Com o sistema de lançamento
+                </p>
+                <span
+                  class="font-mono text-primary mt-2 block"
+                  style="font-size: 10px; opacity: 0.6"
+                  >● Aluno verificado · Belo Horizonte, MG</span
+                >
+              </div>
+              <div
+                class="rounded-lg border border-border bg-card p-6 text-center hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
+              >
+                <span
+                  class="font-heading text-3xl md:text-4xl font-extrabold text-primary block mb-1"
+                  >3 clientes</span
+                ><span
+                  class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground block mb-3"
+                  >em 7 dias</span
+                >
+                <p class="font-body text-sm text-muted-foreground">
+                  Aplicando o Playbook de Agências
+                </p>
+                <span
+                  class="font-mono text-primary mt-2 block"
+                  style="font-size: 10px; opacity: 0.6"
+                  >● Aluno verificado · Curitiba, PR</span
+                >
+              </div>
+              <div
+                class="rounded-lg border border-border bg-card p-6 text-center hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
+              >
+                <span
+                  class="font-heading text-3xl md:text-4xl font-extrabold text-primary block mb-1"
+                  >+R$ 25.000</span
+                ><span
+                  class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground block mb-3"
+                  >em 60 dias</span
+                >
+                <p class="font-body text-sm text-muted-foreground">
+                  Playbook Ultimate — sistema completo
+                </p>
+                <span
+                  class="font-mono text-primary mt-2 block"
+                  style="font-size: 10px; opacity: 0.6"
+                  >● Aluno verificado · Rio de Janeiro, RJ</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ══════════════ BÔNUS ══════════════ -->
+        <section
+          class="px-6 py-20 md:py-28 bg-[hsl(0_0%_4%)]"
+          data-aos="fade-up"
+        >
+          <div class="max-w-5xl mx-auto">
+            <span
+              class="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-4 block"
+              >Além do material principal</span
+            >
+            <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">
+              Bônus incluídos em todos os planos
+            </h2>
+            <p class="text-muted-foreground font-body mb-12 max-w-xl">
+              Você não compra só um documento. Você entra num ecossistema de
+              execução que continua evoluindo com você.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div
+                class="rounded-lg border border-border bg-card p-6 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
+                data-aos="fade-up"
+              >
+                <div
+                  class="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mb-4 text-xl"
+                >
+                  💬
+                </div>
+                <h3 class="font-heading font-bold text-base mb-2">
+                  Comunidade Exclusiva
+                </h3>
+                <p
+                  class="font-body text-sm text-muted-foreground leading-relaxed"
+                >
+                  Acesso ao grupo privado de alunos ativos. Tire dúvidas, troque
+                  estratégias e veja o que está funcionando agora, em tempo
+                  real.
+                </p>
+                <span class="font-mono text-xs text-primary/60 mt-3 block"
+                  >Acesso permanente · sem custo adicional</span
+                >
+              </div>
+              <div
+                class="rounded-lg border border-border bg-card p-6 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div
+                  class="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mb-4 text-xl"
+                >
+                  🔄
+                </div>
+                <h3 class="font-heading font-bold text-base mb-2">
+                  Atualizações Constantes
+                </h3>
+                <p
+                  class="font-body text-sm text-muted-foreground leading-relaxed"
+                >
+                  IA evolui todo mês. Seus materiais também. Atualizações de
+                  conteúdo, novos prompts, novas ferramentas, sem pagar nada a
+                  mais.
+                </p>
+                <span class="font-mono text-xs text-primary/60 mt-3 block"
+                  >Acesso vitalício · sempre atualizado</span
+                >
+              </div>
+              <div
+                class="rounded-lg border border-border bg-card p-6 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div
+                  class="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mb-4 text-xl"
+                >
+                  ⚡
+                </div>
+                <h3 class="font-heading font-bold text-base mb-2">
+                  Conteúdos Extras
+                </h3>
+                <p
+                  class="font-body text-sm text-muted-foreground leading-relaxed"
+                >
+                  Templates de copy, scripts de vendas, prompts validados e
+                  recursos exclusivos que os alunos recebem ao longo da jornada.
+                  Você não começa do zero.
+                </p>
+                <span class="font-mono text-xs text-primary/60 mt-3 block"
+                  >Templates prontos · use imediatamente</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════ VALOR DO CONTEÚDO ══════════════ -->
+        <section class="px-6 py-20 md:py-28" data-aos="fade-up">
+          <div class="max-w-4xl mx-auto">
+            <span
+              class="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-4 block"
+              >Por que aprender IA agora é fundamental</span
+            >
+            <h2 class="font-heading text-3xl md:text-4xl font-bold mb-8">
+              Você não está comprando um documento.<br /><span
+                class="text-primary"
+                >Está comprando vantagem competitiva.</span
+              >
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <div>
+                <h3
+                  class="font-heading font-bold text-lg mb-4 flex items-center gap-2"
+                >
+                  <span class="text-primary">✕</span> Quem não usa IA hoje
+                </h3>
+                <ul class="space-y-3 text-sm text-muted-foreground font-body">
+                  <li class="flex gap-2">
+                    <span class="text-red-400 flex-shrink-0">✕</span>Trabalha
+                    10x mais pelo mesmo resultado
+                  </li>
+                  <li class="flex gap-2">
+                    <span class="text-red-400 flex-shrink-0">✕</span>Perde
+                    clientes para concorrentes que automatizaram
+                  </li>
+                  <li class="flex gap-2">
+                    <span class="text-red-400 flex-shrink-0">✕</span>Depende de
+                    esforço manual para cada real faturado
+                  </li>
+                  <li class="flex gap-2">
+                    <span class="text-red-400 flex-shrink-0">✕</span>Fica para
+                    trás no mercado enquanto outros escalam
+                  </li>
+                  <li class="flex gap-2">
+                    <span class="text-red-400 flex-shrink-0">✕</span>Continua
+                    consumindo conteúdo gratuito que não converte
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3
+                  class="font-heading font-bold text-lg mb-4 flex items-center gap-2"
+                >
+                  <span class="text-primary">✓</span> Quem tem o sistema com IA
+                </h3>
+                <ul class="space-y-3 text-sm text-muted-foreground font-body">
+                  <li class="flex gap-2">
+                    <span class="text-primary flex-shrink-0">✓</span>Vende
+                    enquanto dorme com automações ativas 24h
+                  </li>
+                  <li class="flex gap-2">
+                    <span class="text-primary flex-shrink-0">✓</span>Atende,
+                    prospecta e fecha no piloto automático
+                  </li>
+                  <li class="flex gap-2">
+                    <span class="text-primary flex-shrink-0">✓</span>Escala o
+                    faturamento sem escalar o esforço
+                  </li>
+                  <li class="flex gap-2">
+                    <span class="text-primary flex-shrink-0">✓</span>Tem acesso
+                    ao ecossistema e comunidade que evolui junto
+                  </li>
+                  <li class="flex gap-2">
+                    <span class="text-primary flex-shrink-0">✓</span>Lucra com a
+                    tendência que a maioria ainda vai entender
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="rounded-xl border border-primary/25 bg-[hsl(0_0%_7%)] p-8 text-center"
+              data-aos="fade-up"
+            >
+              <p class="font-heading text-xl md:text-2xl font-bold mb-2">
+                Valor real dos materiais:
+                <span class="text-primary line-through opacity-60"
+                  >R$ 513,60</span
+                >
+              </p>
+              <p
+                class="font-heading text-3xl md:text-4xl font-extrabold text-primary mb-2"
+              >
+                Combo Completo por R$ 267
+              </p>
+              <p class="font-mono text-sm text-muted-foreground mb-6">
+                ou 12x de R$ 26,70 · Acesso imediato · Garantia 7 dias
+              </p>
+              <a
+                href="https://wa.me/5531996851564?text=Quero+o+Combo+Completo+por+R%24267"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 min-h-[52px] md:min-h-0 bg-primary text-primary-foreground font-heading font-bold uppercase tracking-wider hover:bg-[hsl(82_100%_44%)] hover:scale-[1.02] active:scale-[0.98] h-11 rounded-md text-base px-12 py-4"
+                >Quero o sistema completo →</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <section class="px-6 py-20 md:py-28" data-aos="fade-up">
+          <div class="max-w-3xl mx-auto">
+            <span
+              class="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-4 block story-fade"
+              >Transparência total</span
+            >
+            <h2
+              class="font-heading text-3xl md:text-4xl font-bold mb-4 story-fade"
+              style="transition-delay: 100ms"
+            >
+              Perguntas frequentes
+            </h2>
+            <div class="mb-8 story-fade" style="transition-delay: 200ms">
+              <p
+                class="font-body text-muted-foreground text-base leading-relaxed"
+              >
+                Respondemos as dúvidas reais de quem ainda está na dúvida.
+              </p>
+            </div>
+
+            <!-- FAQ items — JS puro no final -->
+            <div
+              class="space-y-3 story-fade"
+              style="transition-delay: 300ms"
+              id="faq-container"
+            >
+              <div
+                class="faq-item rounded-lg border border-border bg-card px-6 transition-colors duration-200 hover:border-primary/30"
+              >
+                <button
+                  class="faq-btn flex w-full items-center justify-between py-4 font-heading font-semibold text-base md:text-lg text-left gap-4"
+                  aria-expanded="false"
+                >
+                  <span>Isso é só mais um curso?</span>
+                  <svg
+                    class="faq-icon flex-shrink-0 w-4 h-4 transition-transform duration-250"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </button>
+                <div
+                  class="faq-body overflow-hidden"
+                  style="
+                    max-height: 0;
+                    transition:
+                      max-height 0.35s ease,
+                      opacity 0.3s ease;
+                    opacity: 0;
+                  "
+                >
+                  <p
+                    class="pb-5 text-sm text-muted-foreground font-body leading-relaxed"
+                  >
+                    Não. É um playbook de execução: um documento direto ao ponto
+                    com o passo a passo exato para você copiar, aplicar e gerar
+                    resultado. Sem aula. Sem vídeo. Sem módulos infinitos. Só o
+                    que você precisa fazer.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="faq-item rounded-lg border border-border bg-card px-6 transition-colors duration-200 hover:border-primary/30"
+              >
+                <button
+                  class="faq-btn flex w-full items-center justify-between py-4 font-heading font-semibold text-base md:text-lg text-left gap-4"
+                  aria-expanded="false"
+                >
+                  <span>Funciona sem experiência com IA?</span>
+                  <svg
+                    class="faq-icon flex-shrink-0 w-4 h-4 transition-transform duration-250"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </button>
+                <div
+                  class="faq-body overflow-hidden"
+                  style="
+                    max-height: 0;
+                    transition:
+                      max-height 0.35s ease,
+                      opacity 0.3s ease;
+                    opacity: 0;
+                  "
+                >
+                  <p
+                    class="pb-5 text-sm text-muted-foreground font-body leading-relaxed"
+                  >
+                    Sim. Cada playbook foi criado para quem está começando do
+                    zero. As ferramentas indicadas são gratuitas ou de baixo
+                    custo, e cada etapa tem a explicação exata de como
+                    configurar e usar. Você não precisa saber programar nem ter
+                    experiência prévia com IA.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="faq-item rounded-lg border border-border bg-card px-6 transition-colors duration-200 hover:border-primary/30"
+              >
+                <button
+                  class="faq-btn flex w-full items-center justify-between py-4 font-heading font-semibold text-base md:text-lg text-left gap-4"
+                  aria-expanded="false"
+                >
+                  <span>Preciso investir dinheiro além do playbook?</span>
+                  <svg
+                    class="faq-icon flex-shrink-0 w-4 h-4 transition-transform duration-250"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </button>
+                <div
+                  class="faq-body overflow-hidden"
+                  style="
+                    max-height: 0;
+                    transition:
+                      max-height 0.35s ease,
+                      opacity 0.3s ease;
+                    opacity: 0;
+                  "
+                >
+                  <p
+                    class="pb-5 text-sm text-muted-foreground font-body leading-relaxed"
+                  >
+                    Não. Os sistemas foram construídos para funcionar com
+                    ferramentas gratuitas. Nada de software caro, anúncio pago
+                    obrigatório ou assinatura extra. Você investe no playbook e
+                    executa com o que já tem ou com ferramentas free.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="faq-item rounded-lg border border-border bg-card px-6 transition-colors duration-200 hover:border-primary/30"
+              >
+                <button
+                  class="faq-btn flex w-full items-center justify-between py-4 font-heading font-semibold text-base md:text-lg text-left gap-4"
+                  aria-expanded="false"
+                >
+                  <span>Em quanto tempo vejo resultado?</span>
+                  <svg
+                    class="faq-icon flex-shrink-0 w-4 h-4 transition-transform duration-250"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </button>
+                <div
+                  class="faq-body overflow-hidden"
+                  style="
+                    max-height: 0;
+                    transition:
+                      max-height 0.35s ease,
+                      opacity 0.3s ease;
+                    opacity: 0;
+                  "
+                >
+                  <p
+                    class="pb-5 text-sm text-muted-foreground font-body leading-relaxed"
+                  >
+                    Depende do seu ritmo de execução. Nossa média é de 14 dias
+                    para o primeiro resultado. Alunos que seguiram o sistema
+                    completo reportaram os primeiros clientes ou vendas em 5 a
+                    21 dias. O material não é uma promessa de riqueza: é um
+                    sistema que funciona se você executar.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="faq-item rounded-lg border border-border bg-card px-6 transition-colors duration-200 hover:border-primary/30"
+              >
+                <button
+                  class="faq-btn flex w-full items-center justify-between py-4 font-heading font-semibold text-base md:text-lg text-left gap-4"
+                  aria-expanded="false"
+                >
+                  <span>Qual playbook devo começar?</span>
+                  <svg
+                    class="faq-icon flex-shrink-0 w-4 h-4 transition-transform duration-250"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </button>
+                <div
+                  class="faq-body overflow-hidden"
+                  style="
+                    max-height: 0;
+                    transition:
+                      max-height 0.35s ease,
+                      opacity 0.3s ease;
+                    opacity: 0;
+                  "
+                >
+                  <p
+                    class="pb-5 text-sm text-muted-foreground font-body leading-relaxed"
+                  >
+                    Se é sua primeira vez, comece pelo Playbook Do Zero ao
+                    Faturamento: é o método completo de ponta a ponta. Se você
+                    já tem um negócio e quer escalar, o Playbook Ultimate com
+                    Claude + n8n + Lovable é o caminho. Em caso de dúvida, o
+                    Combo Completo garante acesso a tudo.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="faq-item rounded-lg border border-border bg-card px-6 transition-colors duration-200 hover:border-primary/30"
+              >
+                <button
+                  class="faq-btn flex w-full items-center justify-between py-4 font-heading font-semibold text-base md:text-lg text-left gap-4"
+                  aria-expanded="false"
+                >
+                  <span>E se não funcionar para mim?</span>
+                  <svg
+                    class="faq-icon flex-shrink-0 w-4 h-4 transition-transform duration-250"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </button>
+                <div
+                  class="faq-body overflow-hidden"
+                  style="
+                    max-height: 0;
+                    transition:
+                      max-height 0.35s ease,
+                      opacity 0.3s ease;
+                    opacity: 0;
+                  "
+                >
+                  <p
+                    class="pb-5 text-sm text-muted-foreground font-body leading-relaxed"
+                  >
+                    Garantia de 7 dias, sem perguntas. Se você aplicar e não ver
+                    nenhum resultado, devolvemos 100% do investimento. Não
+                    pedimos prova de execução, não questionamos o motivo. A
+                    garantia existe porque acreditamos no sistema. Você deve
+                    confiar antes de executar.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <script>
+              /* FAQ accordion puro */
+              (function () {
+                document.querySelectorAll(".faq-btn").forEach(function (btn) {
+                  btn.addEventListener("click", function () {
+                    var item = btn.closest(".faq-item");
+                    var body = item.querySelector(".faq-body");
+                    var icon = btn.querySelector(".faq-icon");
+                    var isOpen = btn.getAttribute("aria-expanded") === "true";
+
+                    /* fecha todos */
+                    document
+                      .querySelectorAll(".faq-item")
+                      .forEach(function (it) {
+                        it.querySelector(".faq-btn").setAttribute(
+                          "aria-expanded",
+                          "false",
+                        );
+                        it.querySelector(".faq-body").style.maxHeight = "0";
+                        it.querySelector(".faq-body").style.opacity = "0";
+                        it.querySelector(".faq-icon").style.transform =
+                          "rotate(0deg)";
+                        it.classList.remove("border-primary/40");
+                      });
+
+                    /* abre o clicado se estava fechado */
+                    if (!isOpen) {
+                      btn.setAttribute("aria-expanded", "true");
+                      body.style.maxHeight = body.scrollHeight + "px";
+                      body.style.opacity = "1";
+                      icon.style.transform = "rotate(180deg)";
+                      item.classList.add("border-primary/40");
+                    }
+                  });
+                });
+              })();
+            </script>
+          </div>
+        </section>
+        <!-- ══════════════ QUEM SOMOS ══════════════ -->
+        <section
+          class="px-6 py-20 md:py-28 bg-[hsl(0_0%_5%)]"
+          data-aos="fade-up"
+        >
+          <div class="max-w-4xl mx-auto">
+            <div class="flex items-center gap-4 mb-3">
+              <img
+                src="./img/logoprojeto.png"
+                alt="AI Builder Academy"
+                style="
+                  width: 64px;
+                  height: 64px;
+                  object-fit: contain;
+                  border-radius: 14px;
+                  background: #0a0a0a;
+                  padding: 8px;
+                  border: 1px solid hsl(82 100% 50% / 0.25);
+                  box-shadow: 0 0 20px hsl(82 100% 50% / 0.08);
+                "
+              />
+              <div>
+                <span
+                  class="font-mono text-xs uppercase tracking-[0.3em] text-primary block mb-1"
+                  >Quem está por trás disso</span
+                >
+                <h2 class="font-heading text-3xl md:text-4xl font-bold">
+                  AI Builder Academy
+                </h2>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start mt-10"
+            >
+              <div>
+                <p
+                  class="font-body text-base text-muted-foreground leading-relaxed mb-5"
+                >
+                  A
+                  <strong class="text-foreground">AI Builder Academy</strong>
+                  não é mais uma plataforma de cursos. Somos um hub de execução
+                  — criado para pessoas que querem usar inteligência artificial
+                  para gerar renda real, não para ficar consumindo teoria
+                  infinitamente.
+                </p>
+                <p
+                  class="font-body text-base text-muted-foreground leading-relaxed mb-5"
+                >
+                  Nascemos da frustração de ver empreendedores comprando curso
+                  atrás de curso, assistindo aula atrás de aula, sem conseguir
+                  transformar conhecimento em dinheiro. O problema nunca foi
+                  falta de informação — foi falta de sistema.
+                </p>
+                <p
+                  class="font-body text-base text-muted-foreground leading-relaxed"
+                >
+                  Por isso criamos os playbooks: documentos de execução diretos,
+                  sem rodeios, com o passo a passo exato para você copiar,
+                  aplicar e gerar resultado. Com IA como alavanca — não como
+                  obstáculo.
+                </p>
+              </div>
+              <div class="space-y-4">
+                <div
+                  style="
+                    border-radius: 12px;
+                    border: 1px solid hsl(82 100% 50% / 0.2);
+                    background: hsl(0 0% 7%);
+                    padding: 20px 24px;
+                    overflow: hidden;
+                  "
+                >
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: 10px;
+                      margin-bottom: 10px;
+                    "
+                  >
+                    <span style="font-size: 18px">🎯</span
+                    ><span
+                      class="font-mono"
+                      style="
+                        font-size: 10px;
+                        text-transform: uppercase;
+                        letter-spacing: 0.2em;
+                        color: hsl(82 100% 60%);
+                      "
+                      >Nossa missão</span
+                    >
+                  </div>
+                  <p
+                    class="font-body"
+                    style="
+                      font-size: 14px;
+                      color: hsl(0 0% 65%);
+                      line-height: 1.7;
+                      margin: 0;
+                      overflow-wrap: break-word;
+                      word-break: break-word;
+                    "
+                  >
+                    Transformar pessoas em executores. No final, só fatura quem
+                    age — e nossa missão é encurtar o caminho entre onde você
+                    está e sua primeira venda com IA.
+                  </p>
+                </div>
+                <div
+                  style="
+                    border-radius: 12px;
+                    border: 1px solid hsl(0 0% 18%);
+                    background: hsl(0 0% 7%);
+                    padding: 20px 24px;
+                    overflow: hidden;
+                  "
+                >
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: 10px;
+                      margin-bottom: 10px;
+                    "
+                  >
+                    <span style="font-size: 18px">👤</span
+                    ><span
+                      class="font-mono"
+                      style="
+                        font-size: 10px;
+                        text-transform: uppercase;
+                        letter-spacing: 0.2em;
+                        color: hsl(82 100% 60%);
+                      "
+                      >Para quem é isso</span
+                    >
+                  </div>
+                  <p
+                    class="font-body"
+                    style="
+                      font-size: 14px;
+                      color: hsl(0 0% 65%);
+                      line-height: 1.7;
+                      margin: 0;
+                      overflow-wrap: break-word;
+                      word-break: break-word;
+                    "
+                  >
+                    Se você está começando do zero, vai encontrar o caminho mais
+                    curto para sua primeira venda. Se já tem um negócio, vai
+                    descobrir como automatizar e escalar de um jeito que antes
+                    parecia coisa de empresa grande.
+                  </p>
+                </div>
+                <div
+                  style="
+                    border-radius: 12px;
+                    border: 1px solid hsl(0 0% 18%);
+                    background: hsl(0 0% 7%);
+                    padding: 20px 24px;
+                    overflow: hidden;
+                  "
+                >
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: 10px;
+                      margin-bottom: 10px;
+                    "
+                  >
+                    <span style="font-size: 18px">⚡</span
+                    ><span
+                      class="font-mono"
+                      style="
+                        font-size: 10px;
+                        text-transform: uppercase;
+                        letter-spacing: 0.2em;
+                        color: hsl(82 100% 60%);
+                      "
+                      >O que entregamos</span
+                    >
+                  </div>
+                  <p
+                    class="font-body"
+                    style="
+                      font-size: 14px;
+                      color: hsl(0 0% 65%);
+                      line-height: 1.7;
+                      margin: 0;
+                      overflow-wrap: break-word;
+                      word-break: break-word;
+                    "
+                  >
+                    Sistemas, não conceitos. Resultados, não teoria. Cada
+                    material foi construído com um único objetivo: te ajudar a
+                    implementar, vender e escalar com IA.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════ CTA FINAL ══════════════ -->
+        <section
+          class="px-6 py-24 md:py-36 relative overflow-hidden"
+          data-aos="fade-up"
+        >
+          <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(82_100%_50%/0.07)_0%,transparent_65%)]"
+          ></div>
+          <div class="max-w-3xl mx-auto text-center relative z-10">
+            <span
+              class="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-6 block"
+              >A decisão é agora</span
+            >
+            <h2
+              class="font-heading text-3xl md:text-5xl font-extrabold leading-tight mb-6"
+            >
+              Enquanto você lê isso,<br />
+              <span class="text-primary"
+                >alguém com o sistema já está faturando.</span
+              >
+            </h2>
+            <p
+              class="text-muted-foreground font-body text-lg mb-4 max-w-xl mx-auto"
+            >
+              IA não vai esperar você estar pronto. O mercado não vai pausar
+              para você estudar mais um mês.
+            </p>
+            <p
+              class="font-heading font-semibold text-base md:text-lg mb-10 max-w-xl mx-auto"
+            >
+              A diferença entre quem fatura e quem assiste é uma
+              <span class="text-primary">decisão de execução.</span>
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+              <a
+                href="https://wa.me/5531996851564?text=Quero+o+Combo+Completo+por+R%24267"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 min-h-[52px] md:min-h-0 bg-primary text-primary-foreground font-heading font-bold uppercase tracking-wider hover:bg-[hsl(82_100%_44%)] hover:scale-[1.02] active:scale-[0.98] h-11 rounded-md text-base px-12 py-7"
+                >Quero o sistema completo →</a
+              >
+              <a
+                href="#gratuitos"
+                class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 min-h-[52px] md:min-h-0 border-2 border-primary text-primary font-heading font-semibold uppercase tracking-wider hover:bg-primary hover:text-primary-foreground hover:scale-[1.02] active:scale-[0.98] h-11 rounded-md text-base px-10 py-4"
+                >Começar de graça</a
+              >
+            </div>
+            <p class="font-mono text-xs text-muted-foreground">
+              🔒 Garantia de 7 dias sem perguntas &nbsp;·&nbsp; Acesso imediato
+              &nbsp;·&nbsp; Sem assinatura
+            </p>
+          </div>
+        </section>
+        <div
+          class="fixed bottom-0 left-0 right-0 z-[1000] animate-slide-up"
+          style="animation: 300ms ease-out 0s 1 normal forwards running slideUp"
+        >
+          <div class="bg-[hsl(0_0%_5%)] border-t border-primary">
+            <div
+              class="max-w-[500px] mx-auto flex items-center justify-between gap-3 px-4 py-3"
+            >
+              <span
+                class="font-body text-sm text-muted-foreground hidden sm:inline"
+                >Seu próximo sistema está aqui →</span
+              ><span class="font-body text-sm text-muted-foreground sm:hidden"
+                >Seu sistema está aqui →</span
+              >
+              <div class="flex items-center gap-2">
+                <a
+                  href="https://wa.me/5531996851564?text=QUERO+MEU+PLAYBOOK"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 min-h-[52px] md:min-h-0 bg-primary text-primary-foreground font-heading font-bold uppercase tracking-wider hover:bg-[hsl(82_100%_44%)] hover:scale-[1.02] active:scale-[0.98] h-9 rounded-md text-xs px-4 py-2 whitespace-nowrap"
+                  >QUERO MEU PLAYBOOK</a
+                ><button
+                  class="text-muted-foreground hover:text-foreground transition-colors p-1"
+                  aria-label="Fechar"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-x w-4 h-4"
+                  >
+                    <path d="M18 6 6 18"></path>
+                    <path d="m6 6 12 12"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="px-6 py-10 border-t border-border text-center">
+          <p
+            class="font-mono text-xs text-muted-foreground uppercase tracking-[0.2em]"
+          >
+            © 2026 — Todos os direitos reservados
+          </p>
+        </footer>
+      </main>
+    </div>
+
+    <script>
+      /* Accordion toggle */
+      (function () {
+        function initAccordion() {
+          document
+            .querySelectorAll("[data-radix-collection-item]")
+            .forEach(function (btn) {
+              btn.addEventListener("click", function () {
+                var contentId = btn.getAttribute("aria-controls");
+                var content = contentId
+                  ? document.getElementById(contentId)
+                  : null;
+                var h3 = btn.closest("h3");
+                var parentItem = h3 ? h3.parentElement : null;
+
+                var isOpen = btn.getAttribute("data-state") === "open";
+
+                if (isOpen) {
+                  btn.setAttribute("data-state", "closed");
+                  btn.setAttribute("aria-expanded", "false");
+                  if (h3) h3.setAttribute("data-state", "closed");
+                  if (parentItem)
+                    parentItem.setAttribute("data-state", "closed");
+                  if (content) {
+                    content.setAttribute("data-state", "closed");
+                    content.setAttribute("hidden", "");
+                  }
+                } else {
+                  btn.setAttribute("data-state", "open");
+                  btn.setAttribute("aria-expanded", "true");
+                  if (h3) h3.setAttribute("data-state", "open");
+                  if (parentItem) parentItem.setAttribute("data-state", "open");
+                  if (content) {
+                    content.setAttribute("data-state", "open");
+                    content.removeAttribute("hidden");
+                  }
+                }
+              });
+            });
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", initAccordion);
+        } else {
+          initAccordion();
+        }
+      })();
+    </script>
+    <script>
+      /* AIBuilder custom script — Fases 4, 5, 6, 7 */
+      (function () {
+        function init() {
+          /* ── FASE 4: Sticky bar ───────────────────────── */
+          var sticky = document.querySelector(".fixed.bottom-0");
+          if (sticky) {
+            var dismissed =
+              sessionStorage.getItem("sticky-dismissed") === "true";
+            sticky.style.display = "none"; // começa oculto
+
+            var closeBtn = sticky.querySelector('button[aria-label="Fechar"]');
+            if (closeBtn) {
+              closeBtn.addEventListener("click", function () {
+                sessionStorage.setItem("sticky-dismissed", "true");
+                sticky.style.display = "none";
+              });
+            }
+
+            if (!dismissed) {
+              var shown = false;
+              window.addEventListener(
+                "scroll",
+                function () {
+                  if (sessionStorage.getItem("sticky-dismissed") === "true")
+                    return;
+                  if (window.scrollY > 400) {
+                    if (!shown) {
+                      sticky.style.display = "";
+                      shown = true;
+                    }
+                  } else {
+                    sticky.style.display = "none";
+                    shown = false;
+                  }
+                },
+                { passive: true },
+              );
+            }
+          }
+
+          /* ── FASE 3: Badges resultado (garante visibilidade) */
+          var resultSec = document.querySelector(
+            "section.px-6.py-20.relative.overflow-visible",
+          );
+          if (resultSec) {
+            resultSec
+              .querySelectorAll(".pointer-events-none span")
+              .forEach(function (b) {
+                b.classList.remove("opacity-0");
+                if (!b.classList.contains("animate-fade-in-up"))
+                  b.classList.add("animate-fade-in-up");
+              });
+          }
+
+          /* ── FASE 7: Desabilitado — AOS gerencia scroll reveal ─ */
+        }
+
+        /* aguarda hydration do React (se houver) */
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(init, 200);
+          });
+        } else {
+          setTimeout(init, 200);
+        }
+      })();
+    </script>
+    <script>
+      window.addEventListener("load", function () {
+        if (typeof AOS !== "undefined") {
+          AOS.init({
+            duration: 700,
+            easing: "ease-out-cubic",
+            once: true,
+            offset: 60,
+            delay: 0,
+            anchorPlacement: "top-bottom",
+            disable: false,
+          });
+          setTimeout(function () {
+            AOS.refresh();
+          }, 500);
+        }
+      });
+    </script>
+  </body>
+</html>
