@@ -517,47 +517,30 @@
             }
           })();
         </script>
-        <section
-          class="border-y border-primary/20 bg-[hsl(0_0%_5%)] overflow-hidden mt-8 md:mt-12"
-        >
-          <div class="flex items-center py-2.5 gap-3 px-4">
-            <span class="relative flex-shrink-0 w-1.5 h-1.5"
-              ><span
-                class="absolute inset-0 rounded-full bg-primary animate-ping opacity-75"
-              ></span
-              ><span
-                class="relative block w-1.5 h-1.5 rounded-full bg-primary"
-              ></span
-            ></span>
-            <div class="relative flex-1 overflow-hidden">
-              <div
-                class="flex whitespace-nowrap aib-ticker will-change-transform"
-              >
-                <span class="font-mono text-[11px] text-primary/70 pr-16"
-                  >Alunos estão faturando com IA nesse
-                  momento&nbsp;&nbsp;·&nbsp;&nbsp;Transforme conhecimento em
-                  renda com automações simples&nbsp;&nbsp;·&nbsp;&nbsp;Comece do
-                  zero e valide seu primeiro negócio ainda
-                  hoje&nbsp;&nbsp;·&nbsp;&nbsp;IA não é o futuro — é o presente
-                  lucrativo&nbsp;&nbsp;·&nbsp;&nbsp;Copie o sistema. Execute.
-                  Fature.&nbsp;&nbsp;·&nbsp;&nbsp;Sua primeira venda pode
-                  acontecer em 7 dias&nbsp;&nbsp;·&nbsp;&nbsp;Pare de estudar.
-                  Comece a construir.&nbsp;&nbsp;·&nbsp;&nbsp;</span
-                ><span
-                  class="font-mono text-[11px] text-primary/70 pr-16"
-                  aria-hidden="true"
-                  >Alunos estão faturando com IA nesse
-                  momento&nbsp;&nbsp;·&nbsp;&nbsp;Transforme conhecimento em
-                  renda com automações simples&nbsp;&nbsp;·&nbsp;&nbsp;Comece do
-                  zero e valide seu primeiro negócio ainda
-                  hoje&nbsp;&nbsp;·&nbsp;&nbsp;IA não é o futuro — é o presente
-                  lucrativo&nbsp;&nbsp;·&nbsp;&nbsp;Copie o sistema. Execute.
-                  Fature.&nbsp;&nbsp;·&nbsp;&nbsp;Sua primeira venda pode
-                  acontecer em 7 dias&nbsp;&nbsp;·&nbsp;&nbsp;Pare de estudar.
-                  Comece a construir.&nbsp;&nbsp;·&nbsp;&nbsp;</span
-                >
-              </div>
-            </div>
+        <section class="border-y border-primary/20 bg-[hsl(0_0%_5%)] mt-8 md:mt-12">
+          <div class="max-w-7xl mx-auto px-4 py-3 md:py-4">
+            <ul class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 md:gap-x-8 font-mono text-[10px] md:text-[11px] uppercase tracking-[0.15em]">
+              <li class="flex items-center gap-2 text-primary">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Temos os melhores materiais
+              </li>
+              <li class="flex items-center gap-2 text-primary/70">
+                <span class="w-1 h-1 rounded-full bg-primary/40"></span>
+                Atualizados com os últimos frameworks
+              </li>
+              <li class="flex items-center gap-2 text-primary/70">
+                <span class="w-1 h-1 rounded-full bg-primary/40"></span>
+                Conteúdo próprio
+              </li>
+              <li class="flex items-center gap-2 text-primary/70">
+                <span class="w-1 h-1 rounded-full bg-primary/40"></span>
+                Inicie sua jornada
+              </li>
+              <li class="flex items-center gap-2 text-primary font-bold">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                Temos promoções
+              </li>
+            </ul>
           </div>
         </section>
         <section class="px-6 py-16 border-y border-border" data-aos="fade-up">
@@ -3971,13 +3954,15 @@
       window.addEventListener("load", function () {
         if (typeof AOS !== "undefined") {
           AOS.init({
-            duration: 700,
+            duration: 600,
             easing: "ease-out-cubic",
             once: true,
-            offset: 60,
+            offset: 120,
             delay: 0,
             anchorPlacement: "top-bottom",
-            disable: false,
+            disable: function() {
+              return window.innerWidth < 768;
+            },
           });
           setTimeout(function () {
             AOS.refresh();
